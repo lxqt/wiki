@@ -1,0 +1,109 @@
+site_name: LXQt Wiki
+docs_dir: lxqt.wiki
+site_url: https://lxqt.github.io/wiki
+repo_url: https://github.com/lxqt/wiki
+edit_uri: https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki
+use_directory_urls: false
+theme:
+  name: material
+  locale: en
+  color_mode: light
+  user_color_mode_toggle: true
+  include_sidebar: false
+  logo: _assets/lxqt.svg
+  favicon: _assets/favicon.png
+  features:
+    - navigation.instant
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+markdown_extensions:
+  - admonition          # basic admonition support
+  - pymdownx.superfences
+  - pymdownx.details    # optional, for collapsible sections
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - toc:
+      permalink: '#'
+plugins:
+  - search:
+  - exclude:
+      glob:
+        - "Config*.md"
+        - "Infrastructure-Fellows.md"
+        - "TODO-for-Wayland.md"
+        - "_Sidebar.md"
+        - "How-To-Release-A-New-Version-of-LXQt.md"
+      regex:
+#        - '.*\.(tmp|bin|tar)$'
+extra_css:
+  - _assets/lxqt.css
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: relative_to_docs
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: relative_to_docs
+    unrecognized_links: warn
+
+not_in_nav:
+    How-To-Release-A-New-Version-of-LXQt.md
+    Infrastructure-Fellows.md
+    TODO-for-Wayland.md
+    _Sidebar.md
+nav:
+- Installation:
+  - Binary Packages: Binary-packages.md
+  - Building from Source: Building-from-source.md
+  - Third-party Apps: Third-party-apps.md
+- Usage:
+  - Launch Sessions: Launching-LXQt-sessions.md
+  - Window Managers (X11): Window-managers-(X11).md
+  - Wayland Settings: Wayland-Session.md
+  - PCMmanFM-Qt:
+    - General: Pcmanfm-qt.md
+    - Custom Actions: custom_actions.md
+  - Screensaver/Locker: Screensaver-and-Screen-Locker.md
+  - Theming.md
+  - Creating Themes: Creating-LXQt-Themes.md
+  - Locale Configuration: SettingLocale.md
+  - Miscellaneous: Miscellaneous.md
+- Development:
+  - Translation.md
+  - Reporting Bugs: Reporting-bugs.md
+  - Contributing Code: Contributing-code.md
+  - Maintaining-a-good-new-dev-experience.md
+  - Editing the Wiki: editing-wiki.md
+  - History.md
+  - Contact.md
+
