@@ -1,7 +1,7 @@
 site_name: LXQt Wiki
 docs_dir: lxqt.wiki
-site_url: https://lxqt.github.io/wiki
-repo_url: https://github.com/lxqt/wiki
+site_url: https://lxqt-project.org/wiki
+repo_url: https://github.com/lxqt/lxqt
 edit_uri: https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki
 use_directory_urls: false
 theme:
@@ -60,6 +60,7 @@ plugins:
         - "TODO-for-Wayland.md"
         - "_Sidebar.md"
         - "How-To-Release-A-New-Version-of-LXQt.md"
+        - "Maintaining-a-good-new-dev-experience.md"
       regex:
 #        - '.*\.(tmp|bin|tar)$'
 extra_css:
@@ -80,6 +81,7 @@ not_in_nav:
     How-To-Release-A-New-Version-of-LXQt.md
     Infrastructure-Fellows.md
     TODO-for-Wayland.md
+    Maintaining-a-good-new-dev-experience.md
     _Sidebar.md
 nav:
 - Installation:
@@ -102,7 +104,6 @@ nav:
   - Translation.md
   - Reporting Bugs: Reporting-bugs.md
   - Contributing Code: Contributing-code.md
-  - Maintaining-a-good-new-dev-experience.md
   - Editing the Wiki: editing-wiki.md
   - History.md
   - Contact.md
