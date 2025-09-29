@@ -61,6 +61,8 @@ plugins:
         - "_Sidebar.md"
         - "How-To-Release-A-New-Version-of-LXQt.md"
         - "Maintaining-a-good-new-dev-experience.md"
+        - "Home.md"
+        - "_Footer.md"
       regex:
 #        - '.*\.(tmp|bin|tar)$'
 extra_css:
@@ -77,13 +79,8 @@ validation:
     absolute_links: relative_to_docs
     unrecognized_links: warn
 
-not_in_nav:
-    How-To-Release-A-New-Version-of-LXQt.md
-    Infrastructure-Fellows.md
-    TODO-for-Wayland.md
-    Maintaining-a-good-new-dev-experience.md
-    _Sidebar.md
 nav:
+- Home: index.md
 - Installation:
   - Binary Packages: Binary-packages.md
   - Building from Source: Building-from-source.md
@@ -99,6 +96,7 @@ nav:
   - Theming.md
   - Creating Themes: Creating-LXQt-Themes.md
   - Locale Configuration: SettingLocale.md
+  - Configuration Files: General.md
   - Miscellaneous: Miscellaneous.md
 - Development:
   - Translation.md
