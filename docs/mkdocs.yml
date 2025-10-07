@@ -89,6 +89,7 @@ nav:
   - Launch Sessions: Launching-LXQt-sessions.md
   - Window Managers (X11): Window-managers-(X11).md
   - Wayland Settings: Wayland-Session.md
+  - LXQt Panel: LXQt-Panel.md
   - PCMmanFM-Qt:
     - General: Pcmanfm-qt.md
     - Custom Actions: custom_actions.md
