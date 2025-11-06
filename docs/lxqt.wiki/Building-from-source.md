@@ -85,7 +85,7 @@ pacman --needed -S kguiaddons libkscreen kidletime kwindowsystem solid layer-she
 #### Debian, Derivatives
 
 ```
-apt-get install libkf6guiaddons-dev libkf6idletime-dev libkf6screen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
+apt-get install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
 ```
 
 #### Fedora
