@@ -14,8 +14,10 @@ See [lxqt-project.org/wiki/editing-wiki](https://lxqt-project.org/wiki/editing-w
 #### Merging PRs
 
 Before merging edit PRs make sure that `update-wikis` is commented out in the workflow,
-otherwise the new page will be overwritten during import. The modified page has to be copied
-manually in the GH Wiki atm.
+otherwise the new page will be overwritten during import. The modified page would have to be copied
+manually in the GH Wiki. Therefor at the moment
+1. Update old wikis
+2. Run both actions hopefully.
 
 After editing the GH Wiki both workflows need to be run manually, with `update-wikis` enabled (uncommented).
 
@@ -28,3 +30,4 @@ After editing the GH Wiki both workflows need to be run manually, with `update-w
   * `index.md`: Home page of https://lxqt-project.org/wiki/.
   * `Home.md`: Home page of https://github.com/lxqt/lxqt/wiki/, not displayed int the new wiki.
   * `_assets`: Logos, css.
+  
