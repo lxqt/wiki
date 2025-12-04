@@ -81,7 +81,8 @@ Let us call this a "transient filter bar". For the sake of consistency, if the f
 
 For pasting text into the transient filter bar, press `Shift + Insert` inside the view. Of course, you could also show and focus the filter bar with `Ctrl + I` but `Shift + Insert` guarantees that the focus remains on the view.
 
-*NOTE:* Pressing and holding `Backspace` is not a good way of clearing the transient filter bar because the selected file may change. Pressing `Escape` is always the best and easiest way.
+!!! note
+     Pressing and holding `Backspace` is not a good way of clearing the transient filter bar because the selected file may change. Pressing `Escape` is always the best and easiest way.
 
 ### Bulk Renaming
 
@@ -129,7 +130,8 @@ Certain File
 
 Then, the folders `Public` and `Templates` as well as the file `Certain File` inside your home directory are treated as hidden by PCManFM-Qt and some other file managers.
 
-*NOTE:* Editing `.hidden` does not have an immediate effect because `GLib` (which does the file management in PCManFM-Qt) uses cache. It will take effect the next time its containing folder is opened. You could also wait a few seconds and reload the folder.
+!!! note
+     Editing `.hidden` does not have an immediate effect because `GLib` (which does the file management in PCManFM-Qt) uses cache. It will take effect the next time its containing folder is opened. You could also wait a few seconds and reload the folder.
 
 ### Thumbnails
 
