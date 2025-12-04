@@ -810,9 +810,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#kvantum" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -820,6 +821,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1317,9 +1323,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#kvantum" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1327,6 +1334,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1464,7 +1476,6 @@
 * Clearlooks
 * Dark
 * Frost
-* Graphite
 * KDE-Plasma
 * Kvantum
 * Leech
@@ -1472,12 +1483,12 @@
 * Silver
 * System (plain widget theme)
 * Valendas</p>
-<p>Some discussions about themes can be followed <a href="https://github.com/lxqt/lxqt/issues/572">here</a>. 
+<p>Some discussions about themes can be followed <a href="https://github.com/lxde/lxqt/issues/572">here</a>. 
 Please note that using "System" theme with Qt widget styles Breeze, Oxygen or Qtcurve results in uncut text in task manager buttons.</p>
 <p>For transparency in some themes a compositor is needed. Only Breeze, Oxygen and Kvantum widget styles support transparency in all panel menus.</p>
 <p>If anybody is interested in how the environment would look without a custom theme, create the following files (if \&lt;prefix&gt; is /usr):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span>mkdir<span class="w"> </span>/usr/share/lxqt/themes/notheme
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>touch<span class="w"> </span>/usr/share/lxqt/themes/notheme/lxqt-panel.qss
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    mkdir /usr/share/lxqt/themes/notheme
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    touch /usr/share/lxqt/themes/notheme/lxqt-panel.qss
 </span></code></pre></div>
 <p>Then choose the Notheme in <code>lxqt-config-appearance</code>.</p>
 <h2 id="qt">Qt<a class="headerlink" href="#qt" title="Permanent link">#</a></h2>
@@ -1490,15 +1501,15 @@ Please note that using "System" theme with Qt widget styles Breeze, Oxygen or Qt
 * Fusion
 * Kvantum</p>
 <p>You can install Qt widget themes using your package manager. <code>Oxygen</code> widget theme can cause DND issues from mainmenu to the desktop or the "quicklaunch" panel widget, see <a href="https://github.com/lxqt/lxqt-panel/issues/1750">lxqt-panel/issues/1750</a>.</p>
-<h2 id="kvantum">Kvantum<a class="headerlink" href="#kvantum" title="Permanent link">#</a></h2>
+<h4 id="kvantum">Kvantum<a class="headerlink" href="#kvantum" title="Permanent link">#</a></h4>
 <p>If <code>Kvantum</code> as Qt Style is selected to achieve an unique overall look the <code>System</code> theme can be selected.</p>
 <p>Kvantum appearance can be configured in <code>Kvantum Manager</code>.</p>
 <h2 id="theming-the-environment">Theming the environment<a class="headerlink" href="#theming-the-environment" title="Permanent link">#</a></h2>
 <ul>
-<li>Qt Palette colors can be modified in Appearance &gt; Widget Style &gt; Qt Palette. In themes like Frost, Dark and Light palette colors are used at some extent. In LXQt 1.0.0 and later customized palettes can be saved and loaded; they are saved in <code>~/.local/share/lxqt/palettes/</code>.</li>
-<li>Window decoration, titlebar and window buttons can be configured in the settings of the X11 Window Manager or Wayland compositor used.</li>
+<li>Qt Palette colors can be modified in lxqt-config-appearence &gt; Widget Style &gt; Qt Palette. In themes like Frost, Dark and Light palette colors are used at some extent. In LXQt 1.0.0 and later customized palettes can be saved and loaded; they are saved in <code>~/.local/share/lxqt/palettes/</code> .</li>
+<li>Window decoration, titlebar and window buttons can be configured in the settings of the <a href="https://github.com/lxqt/lxqt/wiki/ConfigWindowManagers">window manager</a> used.</li>
 </ul>
-<p>For theming Qt5 applications some extra packages are needed, see <a href="https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support">https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support</a> or <a href="https://lxqt-project.org/wiki/Building-from-source.html#qt5-support">lxqt-project.org/wiki/Building-from-source#qt5-support</a></p>
+<p>For theming Qt5 applications some extra packages are needed, see <a href="https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support">https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support</a></p>
 <p>For some infos about how to create a nice looking environment take a look at this <a href="https://wiki.manjaro.org/index.php/LXQt#Theming">Manjaro Wiki entry</a>.</p>
 <h2 id="icons-and-artwork">Icons and Artwork<a class="headerlink" href="#icons-and-artwork" title="Permanent link">#</a></h2>
 <p>You can find the LXQt Logo done by Caig in <a href="https://github.com/Caig/LXQt-graphics">his repo</a>.</p>
@@ -1510,8 +1521,7 @@ Please note that using "System" theme with Qt widget styles Breeze, Oxygen or Qt
 * Norse
 * Faenza, Faenza Dark
 * Tangerine
-* Tango
-* Tela</p>
+* Tango</p>
 <h2 id="symbolic-icons">Symbolic icons<a class="headerlink" href="#symbolic-icons" title="Permanent link">#</a></h2>
 <p>LXQt's icon engine supports symbolic icons, which change color based on their background colors. For supporting them, <code>LXQt Appearance Configuration</code> → <code>Icon theme</code> → <code>Colorize icons based on widget style (palette)</code> should be checked.</p>
 <p>With symbolic icons, for having a dark panel with a light Qt widget style (or conversely),</p>

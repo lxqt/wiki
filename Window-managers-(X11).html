@@ -1527,10 +1527,10 @@
 
 <p>LXQt does not provide its own window manager but any arbitrary window manager can be used, most notably Openbox, KWin (the window manager of KDE), and Xfwm4 (the window manager of Xfce).   </p>
 <p>The current window manager is stored in section <code>[General]</code> of file <code>session.conf</code>.
-<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[General]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">[...]</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">window_manager</span><span class="o">=</span><span class="s">xfwm4</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">[...]</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[General]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[...]
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>window_manager=xfwm4
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[...]
 </span></code></pre></div></p>
 <p>It can be chosen in configuration dialogue <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a> of <a href="https://github.com/lxqt/lxqt-session">lxqt-session</a>.</p>
 <h4 id="known-window-managers">Known Window Managers<a class="headerlink" href="#known-window-managers" title="Permanent link">#</a></h4>
@@ -1542,7 +1542,7 @@
 <p>Assigning Super_L ("Windows" or "Meta" key) for opening the main menu in the panel or switching keyboard layout may conflict eventually with the use of this key as a modifier, disabling eventually some of the default keybindings in the window manager in use.</p>
 </div>
 <h4 id="compositor">Compositor<a class="headerlink" href="#compositor" title="Permanent link">#</a></h4>
-<p>For desktop effects, shadows, transparency and else a compositor has to be enabled. Kwin and Xfwm4 provide their own compositor, for openbox or other Window Managers <code>picom</code> can be used.</p>
+<p>For desktop effects, shadows, transparency and else a compositor has to be enabled. Kwin and Xfwm4 provide their own compositor, for openbox or other Window Managers 'picom' can be used.</p>
 <p>A configuration tool for picom is: <a href="https://github.com/redtide/picom-conf/">picom.conf</a>.</p>
 <h3 id="openbox">Openbox<a class="headerlink" href="#openbox" title="Permanent link">#</a></h3>
 <p>Configuration is handled by a configuration file <a href="http://openbox.org/wiki/Help:Configuration">rc.xml</a>, the user specific copy of which is normally found in <code>~/.config/openbox/</code>.   </p>
@@ -1554,10 +1554,10 @@
 <p>An essential custom menu entry for kwin can be installed from <a href="https://github.com/lxqt/lxqt-WM-integration-files#kwin_x11">here</a>.</p>
 <h4 id="shortcuts_1">Shortcuts<a class="headerlink" href="#shortcuts_1" title="Permanent link">#</a></h4>
 <p>KDE stores keyboard shortcuts in the <code>~/.config/kglobalshortcutsrc</code> configuration file. The GUI can be installed separately, but requires the complete <code>plasma-desktop</code> package.</p>
-<blockquote>
-<p>[!NOTE]
-Kwin version 6.*  does not start <code>kglobalacceld</code> automatically anymore, adding  <code>/usr/lib/kglobalacceld</code> in LXQt <code>Session Settings &gt; Autostart</code> is needed.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kwin version 6.*  does not start <code>kglobalacceld</code> automatically anymore, adding  <code>/usr/lib/kglobalacceld</code> in LXQt <code>Session Settings &gt; Autostart</code> is needed.</p>
+</div>
 <h4 id="issues">Issues<a class="headerlink" href="#issues" title="Permanent link">#</a></h4>
 <h5 id="show-desktop">Show Desktop<a class="headerlink" href="#show-desktop" title="Permanent link">#</a></h5>
 <p>KWin does not distinguish PcManFm-Qt windows from the desktop which is drawn by PcManFm-Qt. Eventually open file manager windows will therefore not be minimized but only blurred. To have "Show Desktop" fully working following steps are necessary:
@@ -1565,10 +1565,10 @@ Kwin version 6.*  does not start <code>kglobalacceld</code> automatically anymor
 * No "Show Desktop" plugin on any panel
 * In <em>KDE Systemsettings &gt; Window Managment &gt; KWin Scripts</em> "MinimizeAll" is activated
 * In <em>KDE Systemsettings &gt; Shortcuts</em> searching for "MinimizeAll" a shortcut is set</p>
-<p>In <code>~/.config/kglobalshortcutsrc</code>:</p>
-<p><div class="language-ini highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">...</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">MinimizeAll</span><span class="o">=</span><span class="s">Alt+D,none,MinimizeAll</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">...</span>
+<p><code>~/.config/kglobalshortcutsrc</code></p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>...
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>MinimizeAll=Alt+D,none,MinimizeAll
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>...
 </span></code></pre></div>
 With <code>xdotool</code> a "Show Desktop" button on the panel can be created by adding the "Custom Command" plugin, set <code>xdotool key "alt+d"</code> (if shortcut is Alt D) as left click command, icon <code>desktop.svg</code> and unset all other settings.</p>
 <h5 id="font-of-titlebar">Font of titlebar<a class="headerlink" href="#font-of-titlebar" title="Permanent link">#</a></h5>
@@ -1578,16 +1578,15 @@ With <code>xdotool</code> a "Show Desktop" button on the panel can be created by
 * Window Manager: Basic settings. Binary <code>xfwm4-settings</code>, desktop entry file <code>xfce-wm-settings.desktop</code>.
 * Window Manager Tweaks: Additional / advanced settings. Binary <code>xfwm4-tweaks-settings</code>, desktop entry file <code>xfce-wmtweaks-settings.desktop</code>.
 * Workspaces: Configures the virtual desktops. Binary <code>xfwm4-workspace-settings</code>, desktop entry file <code>xfce-workspaces-settings.desktop</code>.</p>
-<blockquote>
-<p>[!NOTE]
-All desktop entry files mentioned above have by default key <code>OnlyShowIn=XFCE;</code> and will thus not be visible in LXQt sessions including the panel's main menu. In order to use these desktop entry files in LXQt sessions remove this line either in the system copy of the files, normally in <code>/usr/share/applications/</code>, or in a user specific copy which has to be placed in <code>~/.local/share/applications/</code> most of the time. The latter is the preferred solution as it won't be overwritten by updates:
- ```
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All desktop entry files mentioned above have by default key <code>OnlyShowIn=XFCE;</code> and will thus not be visible in LXQt sessions including the panel's main menu. In order to use these desktop entry files in LXQt sessions remove this line either in the system copy of the files, normally in <code>/usr/share/applications/</code>, or in a user specific copy which has to be placed in <code>~/.local/share/applications/</code> most of the time. The latter is the preferred solution as it won't be overwritten by updates:</p>
+</div>
+<p>```
  mkdir ~/.local/share/applications
  cp /usr/share/applications/xfce-w* ~/.local/share/applications</p>
-<p>[!NOTE] 
-Those files ready for use can be installed from <a href="https://github.com/lxqt/lxqt-WM-integration-files#xfwm4">here</a>.
+<p>Those files ready for use can be installed from <a href="https://github.com/lxqt/lxqt-WM-integration-files#xfwm4">here</a>.
 ```</p>
-</blockquote>
 <h4 id="shortcuts_2">Shortcuts<a class="headerlink" href="#shortcuts_2" title="Permanent link">#</a></h4>
 <p>Shortcuts can be modified in <em>Preferences &gt; Window Manager &gt;  Keyboard</em> , binary <code>xfwm4-settings</code>.</p>
 <h3 id="other-window-manager">Other Window Manager<a class="headerlink" href="#other-window-manager" title="Permanent link">#</a></h3>

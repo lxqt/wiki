@@ -970,21 +970,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#menu-files" class="md-nav__link">
+  <a href="#add-or-modify-main-menu-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Menu Files
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-modify-or-hide-menu-entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add, modify or hide Menu Entries
+        Add or modify Main Menu Entries
       
     </span>
   </a>
@@ -1348,21 +1337,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#menu-files" class="md-nav__link">
+  <a href="#add-or-modify-main-menu-entries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Menu Files
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-modify-or-hide-menu-entries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add, modify or hide Menu Entries
+        Add or modify Main Menu Entries
       
     </span>
   </a>
@@ -1423,23 +1401,19 @@
 
   <h1>Miscellaneous</h1>
 
-<h2 id="autostart-applications-on-login">Autostart Applications on Login<a class="headerlink" href="#autostart-applications-on-login" title="Permanent link">#</a></h2>
-<p>Launching applications at the beginning of LXQt sessions is implemented according to the XDG <a href="https://www.freedesktop.org/wiki/Specifications/autostart-spec/">Autostart Specification</a>.   </p>
+<h4 id="autostart-applications-on-login">Autostart Applications on Login<a class="headerlink" href="#autostart-applications-on-login" title="Permanent link">#</a></h4>
+<p>Launching applications at the beginning of LXQt sessions is implemented according to the to the XDG <a href="https://www.freedesktop.org/wiki/Specifications/autostart-spec/">Autostart Specification</a>.   </p>
 <p>Basically this means suitable desktop entry files have to be placed in <code>~/.config/autostart/</code>. <br />
 These files can be handled manually or from configuration dialogue <a href="https://github.com/lxqt/lxqt-session/blob/master/README.md#lxqt-session-settings">LXQt Session Settings</a> (binary <code>lxqt-config-session</code>) which belongs to <a href="https://github.com/lxqt/lxqt-session">lxqt-session</a>.   </p>
 <p>For an explanation of terms "Global Autostart" and "LXQt Autostart" see section <a href="https://github.com/lxqt/lxqt-session/blob/master/README.md#autostart">Autostart</a> in the repository's <code>README.md</code>. <br />
 Note this distinction is currently suffering from a problem addressed in issue <a href="https://github.com/lxqt/lxqt/issues/746">lxqt#746</a>.   </p>
-<h2 id="lxqt-modules">LXQt Modules<a class="headerlink" href="#lxqt-modules" title="Permanent link">#</a></h2>
+<h4 id="lxqt-modules">LXQt Modules<a class="headerlink" href="#lxqt-modules" title="Permanent link">#</a></h4>
 <p>Under "Session settings" it is possible to start/stop and enable/disable single modules. Any application which contains <code>X-LXQt-Module=true</code> in its <code>.desktop</code> file in <code>/usr/share/applications</code> or <code>~/.local/share/applications</code> will be handled as a module. This can be useful for applications like compositors (compton or picom) and similar.</p>
-<p>See also <a href="https://lxqt-project.org/blog/2022/09/20/about-modules-in-lxqt/">lxqt-project.org/blog/2022/09/20/about-modules-in-lxqt/</a>.</p>
-<h2 id="default-applications">Default Applications<a class="headerlink" href="#default-applications" title="Permanent link">#</a></h2>
+<h4 id="default-applications">Default Applications<a class="headerlink" href="#default-applications" title="Permanent link">#</a></h4>
 <p>The default browser, email client and file manager can be set by using File Associations dialog (<code>lxqt-config-file-associations</code>) → Default Applications.</p>
 <p>LXQt's command-line tool for manipulating MIME type associations and default applications is <code>qtxdg-mat</code>, provided by <a href="https://github.com/lxqt/qtxdg-tools">qtxdg-tools</a>. It can also set the default terminal. See <code>qtxdg-mat --help</code> for details.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default terminal used by PCManFM-Qt should be set in its Preferences dialog → Advanced.</p>
-</div>
-<h2 id="lxqt-filedialog-in-gtk-applications">LXQt Filedialog in GTK Applications<a class="headerlink" href="#lxqt-filedialog-in-gtk-applications" title="Permanent link">#</a></h2>
+<p>NOTE: The default terminal used by PCManFM-Qt should be set in its Preferences dialog → Advanced.</p>
+<h4 id="lxqt-filedialog-in-gtk-applications">LXQt Filedialog in GTK Applications<a class="headerlink" href="#lxqt-filedialog-in-gtk-applications" title="Permanent link">#</a></h4>
 <p>Requires <a href="https://github.com/lxqt/xdg-desktop-portal-lxqt/">xdg-desktop-portal-lxqt</a>.</p>
 <ul>
 <li>Firefox version 98 and higher:  Open in the address bar <code>about:config</code>, search for "portal" and set both <code>widget.use-xdg-desktop-portal.file-picker</code> and <code>widget.use-xdg-desktop-portal.mime-handler</code>  from <code>2</code> to <code>1</code>. </li>
@@ -1448,38 +1422,31 @@ Note this distinction is currently suffering from a problem addressed in issue <
 </ul>
 <p>A general use of <code>GTK_USE_PORTAL=1</code> in <code>~/.profile</code> or <code>/etc/profile</code> can lead to issues and
  is not recommended. </p>
-<p>For details see <a href="https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html">https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html</a></p>
-<h2 id="lxqt-panel">LXQt Panel<a class="headerlink" href="#lxqt-panel" title="Permanent link">#</a></h2>
+<p>If multiple xdg-desktop-portals are installed  to use the LXQt filedialog in a LXQt session the file
+<code>~/.config/xdg-desktop-portal/lxqt-portals.conf</code> has to be created containing:</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[preferred]
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>default=lxqt
+</span></code></pre></div>
+For details see <a href="https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html">https://flatpak.github.io/xdg-desktop-portal/docs/portals.conf.html</a></p>
+<h3 id="lxqt-panel">LXQt Panel<a class="headerlink" href="#lxqt-panel" title="Permanent link">#</a></h3>
 <p>Settings are accessible by right click on free space on the panel or its  plugins (except window buttons in task manager) and can be blocked completely checking the last item to prevent accidental changes or removals of plugins.</p>
 <p>Plugins can be configured either by right click or by Panel Settings → Plugin → icon "..."</p>
-<h3 id="plugin-keyboard-indicator">Plugin Keyboard-Indicator<a class="headerlink" href="#plugin-keyboard-indicator" title="Permanent link">#</a></h3>
+<h4 id="plugin-keyboard-indicator">Plugin Keyboard-Indicator<a class="headerlink" href="#plugin-keyboard-indicator" title="Permanent link">#</a></h4>
 <p>It is possible to show country flags instead of the  ISO code  for the keyboard layout installing <code>iso-flags-svg</code> or <code>iso-flags-png</code> if provided by the distribution in use. An independent set can be found <a href="https://github.com/hampusborgos/country-flags">here</a>. The path to the folder containing the flags has to be configured manually, example <code>/usr/share/iso-flags-svg/country-4x3/%1.svg</code>. </p>
-<h3 id="menu-files">Menu Files<a class="headerlink" href="#menu-files" title="Permanent link">#</a></h3>
-<p>Right click the panel's "Main Menu" or "Fancy Menu" widget and choose Configure → Menu File. The following files belong to LXQt:
-* <code>lxqt-applications-fm.menu</code>: Used by PCManFM-Qt in <code>menu://Applications</code>; not quite relevant to lxqt-panel.
-* <code>lxqt-config.menu</code>: used by "Configuration Center"; not relevant to lxqt-panel.
-* <code>lxqt-applications.menu</code>: The default menu.
-* <code>lxqt-applications-compact.menu</code> Can be used in both Mainmenu and Fancymenu, in Mainmenu it will generate a two-level layout.</p>
-<blockquote>
-<p>[!Note]
-<code>lxqt-applications-compact.menu</code> does not display a probable "Wine" category because <code>~/.config/menus/applications-merged</code> does not match "compact". Renaming it to "compact-merged" will fix that.</p>
-</blockquote>
-<p>LXQt 2.3 and later:
-* <code>lxqt-panel-applications.menu</code> Default menu for Fancymenu.</p>
-<h3 id="add-modify-or-hide-menu-entries">Add, modify or hide Menu Entries<a class="headerlink" href="#add-modify-or-hide-menu-entries" title="Permanent link">#</a></h3>
+<h4 id="add-or-modify-main-menu-entries">Add or modify Main Menu Entries<a class="headerlink" href="#add-or-modify-main-menu-entries" title="Permanent link">#</a></h4>
 <ul>
-<li>For adding a new menu entry, the directory <code>~/.local/share/applications/</code> can be opened in PCManFM-Qt and a new desktop entry can be created in it by using Tools → Create Launcher.</li>
-<li>For modifying an existing menu entry, the application's <code>.desktop</code> file can be copied from <code>/usr/share/applications/</code> to <code>~/.local/share/applications/</code> and then edited. Changes will not be lost with updates.</li>
-<li>For hiding an existing menu entry, the application's <code>.desktop</code> file can be copied from <code>/usr/share/applications/</code> to <code>~/.local/share/applications/</code> and then edited by adding the line <code>NoDisplay=true</code>. Changes will not be lost with updates.</li>
+<li>To  modify an existing menu entry  the application's <code>.desktop</code> file can be copied from <code>/usr/share/applications/</code> to <code>~/.local/share/applications/</code> and then edited. Changes will not be lost on updates.</li>
+<li>To add a new menu entry <code>~/.local/share/applications/</code> can be opened in PcManFM-qt and by Tools → Create Launcher a new entry can be configured.</li>
 </ul>
-<p>See also <a href="https://lxqt-project.org/blog/2022/06/18/menu-editing-in-lxqt/">lxqt-project.org/blog/2022/06/18/menu-editing-in-lxqt/</a>.</p>
-<h2 id="power-profiles">Power Profiles<a class="headerlink" href="#power-profiles" title="Permanent link">#</a></h2>
-<p>With LXQt ≥ 2.2, if <code>power-profiles-daemon</code> is installed, the available profiles can be changed by right clicking the battery icon.</p>
-<h2 id="libreoffice-openoffice-vs-environment-variable-sal_use_vclplugin">LibreOffice / OpenOffice vs. environment variable SAL_USE_VCLPLUGIN<a class="headerlink" href="#libreoffice-openoffice-vs-environment-variable-sal_use_vclplugin" title="Permanent link">#</a></h2>
-<p>Neither of these office suites uses one of the well-known widget toolkits like GTK or Qt by default but sticks with its custom "Visual Components Library (VCL)". Integrating with the former is handled by components called plugins.   </p>
-<p>A choice among the available plugins is made by setting the environment variable <code>SAL_USE_VCLPLUGIN</code>, which accepts the values <code>gen</code> ("generic", hence no use of plugins / native VCL UI), <code>gtk3</code>, <code>gtk4</code>, <code>kf6</code> (KDE), <code>qt5</code> and <code>qt6</code>. System defaults are set by files <code>/etc/profile.d/libreoffice-&lt;flavour&gt;.&lt;shell&gt;</code>. Alternatively, in LXQt, the variable can be set in LXQt Session Settings under "Advanced". By default it is not set this way, but if set, it supersedes other means to tweak the variable.</p>
+<h3 id="power-profiles">Power Profiles<a class="headerlink" href="#power-profiles" title="Permanent link">#</a></h3>
+<p>With LXQt ≥ 2.2, if <code>power-profiles-daemon</code> is installed, the available profiles could be changed by right clicking the battery icon.</p>
+<h3 id="libreoffice-openoffice-vs-environment-variable-sal_use_vclplugin">LibreOffice / OpenOffice vs. environment variable SAL_USE_VCLPLUGIN<a class="headerlink" href="#libreoffice-openoffice-vs-environment-variable-sal_use_vclplugin" title="Permanent link">#</a></h3>
+<p>Both office suites do not use one of the well-known widget toolkits like GTK or Qt but stick with their custom "Visual Component<em>s</em> Library (VCL)". Integrating with the former is handled by components called <code>plugins</code>.   </p>
+<p>A choice among the available plugins is made by setting environment variable <code>SAL_USE_VCLPLUGIN</code> which is accepting values <code>gen</code> ("generic", hence no use of plugins / native VCL UI), <code>gtk3</code>, <code>gtk4</code>, <code>kf6</code> (KDE), <code>qt5</code> and <code>qt6</code>. 
+System defaults are set by files <code>/etc/profile.d/libreoffice-&lt;flavour&gt;.&lt;shell&gt;</code>. Alternatively in LXQt the variable can be set in the session configuration dialogue <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a> under "Advanced".
+By default it is not set this way but if set it supersedes other means to tweak the variable.</p>
 <p>Note the support of the Qt ecosystem is rather poor. Unlike in GTK there's no interaction with the widget toolkit itself but with KDE libraries in an outdated version only. In particular it is currently not possible to use the generic Qt file chooser dialogues with LibreOffice or OpenOffice. <br />
-Also, enabling a certain plugin does not guarantee that its corresponding backend will be activated, because that backend should first be installed independently.   </p>
+Also, enabling a certain plugin does not necessarily mean the corresponding backends are available which rather have to be installed independently.   </p>
 
 
 

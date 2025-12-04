@@ -698,7 +698,7 @@
   <a href="#battery-percentage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Battery percentage
+        Battery percentage:
       
     </span>
   </a>
@@ -709,7 +709,7 @@
   <a href="#battery-remaining-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Battery remaining time
+        Battery remaining time:
       
     </span>
   </a>
@@ -720,7 +720,7 @@
   <a href="#free-memory-percentage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Free memory percentage
+        Free memory percentage:
       
     </span>
   </a>
@@ -731,7 +731,7 @@
   <a href="#network-speed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network speed
+        Network speed:
       
     </span>
   </a>
@@ -742,7 +742,18 @@
   <a href="#bandwidthmonth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bandwidth/month
+        Bandwidth/month:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-keyboard-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugin Keyboard-Indicator
       
     </span>
   </a>
@@ -751,17 +762,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-keyboard-indicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plugin Keyboard-Indicator
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1379,7 +1379,7 @@
   <a href="#battery-percentage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Battery percentage
+        Battery percentage:
       
     </span>
   </a>
@@ -1390,7 +1390,7 @@
   <a href="#battery-remaining-time" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Battery remaining time
+        Battery remaining time:
       
     </span>
   </a>
@@ -1401,7 +1401,7 @@
   <a href="#free-memory-percentage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Free memory percentage
+        Free memory percentage:
       
     </span>
   </a>
@@ -1412,7 +1412,7 @@
   <a href="#network-speed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network speed
+        Network speed:
       
     </span>
   </a>
@@ -1423,7 +1423,18 @@
   <a href="#bandwidthmonth" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bandwidth/month
+        Bandwidth/month:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-keyboard-indicator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Plugin Keyboard-Indicator
       
     </span>
   </a>
@@ -1432,17 +1443,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#plugin-keyboard-indicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Plugin Keyboard-Indicator
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1495,8 +1495,9 @@
 <p>See also <a href="https://lxqt-project.org/blog/2022/06/18/menu-editing-in-lxqt/">lxqt-project.org/blog/2022/06/18/menu-editing-in-lxqt/</a>.</p>
 <h2 id="panel-profiles">Panel Profiles<a class="headerlink" href="#panel-profiles" title="Permanent link">#</a></h2>
 <p>By installing <a href="https://codeberg.org/MrReplikant/lxqt-panel-profiles/">lxqt-panel-profiles</a>  different panel configurations can be backuped and restored. </p>
+<p>A collection of commands and scripts which can be used in the custom command widget of <code>lxqt-panel</code>.</p>
 <h2 id="custom-command-widget">Custom Command Widget<a class="headerlink" href="#custom-command-widget" title="Permanent link">#</a></h2>
-<p>A powerful and versatile plugin which can show outputs from commands as text or image and launch applications.</p>
+<p>A powerful and versatile plugin which can show outputs from commands as text or images and launch applications. </p>
 <p>Some examples:</p>
 <h3 id="used-partition-space-in-devsda1">Used partition space in /dev/sda1<a class="headerlink" href="#used-partition-space-in-devsda1" title="Permanent link">#</a></h3>
 <p><img width="102" height="43" alt="harddisk: percentage-free" src="https://github.com/user-attachments/assets/65fbd94b-107f-43f7-bb80-90e26f62aea0" /></p>
@@ -1512,31 +1513,31 @@ On left click: "filelight" or similar tools</p>
 Text: <code>%1°C</code>
 Icon: "temperature-normal"
 On left click: "Qps"</p>
-<h3 id="battery-percentage">Battery percentage<a class="headerlink" href="#battery-percentage" title="Permanent link">#</a></h3>
+<h3 id="battery-percentage">Battery percentage:<a class="headerlink" href="#battery-percentage" title="Permanent link">#</a></h3>
 <p><img width="94" height="45" alt="battery: percentage" src="https://github.com/user-attachments/assets/8002beab-eafd-49eb-83b1-937e2c4be131" /></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span>upower<span class="w"> </span>-b<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>percentage<span class="p">|</span>awk<span class="w"> </span><span class="o">{</span><span class="s1">&#39;print $2&#39;</span><span class="o">}</span>
 </span></code></pre></div>
-<h3 id="battery-remaining-time">Battery remaining time<a class="headerlink" href="#battery-remaining-time" title="Permanent link">#</a></h3>
+<h3 id="battery-remaining-time">Battery remaining time:<a class="headerlink" href="#battery-remaining-time" title="Permanent link">#</a></h3>
 <p><img width="139" height="45" alt="battery: time left" src="https://github.com/user-attachments/assets/1f538120-1efd-4c93-b9e3-eec817dc3b7a" /></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>upower<span class="w"> </span>-i<span class="w"> </span>/org/freedesktop/UPower/devices/battery_BAT0<span class="p">|</span>grep<span class="w"> </span>time<span class="p">|</span>awk<span class="w"> </span><span class="o">{</span><span class="s1">&#39;print $4,$5&#39;</span><span class="o">}</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Icon:<span class="w"> </span><span class="s2">&quot;battery&quot;</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>&lt;img<span class="w"> </span><span class="nv">width</span><span class="o">=</span><span class="s2">&quot;94&quot;</span><span class="w"> </span><span class="nv">height</span><span class="o">=</span><span class="s2">&quot;45&quot;</span><span class="w"> </span><span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;battery: percentage&quot;</span><span class="w"> </span><span class="nv">src</span><span class="o">=</span><span class="s2">&quot;https://github.com/user-attachments/assets/c6b76c62-7eea-4ac9-a1d4-ecc3e1811b17&quot;</span><span class="w"> </span>/&gt;
 </span></code></pre></div>
-<h3 id="free-memory-percentage">Free memory percentage<a class="headerlink" href="#free-memory-percentage" title="Permanent link">#</a></h3>
+<h3 id="free-memory-percentage">Free memory percentage:<a class="headerlink" href="#free-memory-percentage" title="Permanent link">#</a></h3>
 <p><img width="96" height="40" alt="memory-free" src="https://github.com/user-attachments/assets/3f957249-258f-4126-971c-e6dba4f72402" /></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w"> </span>free<span class="w"> </span>-mh<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $4}&#39;</span>
 </span></code></pre></div>
-<h3 id="network-speed">Network speed<a class="headerlink" href="#network-speed" title="Permanent link">#</a></h3>
+<h3 id="network-speed">Network speed:<a class="headerlink" href="#network-speed" title="Permanent link">#</a></h3>
 <p><img alt="immagine" src="https://github.com/user-attachments/assets/0c97c1ca-734f-464e-ad37-dd78625dade3" />
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ifstat<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>enp2s0f3u2u4<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print &quot;⬇ &quot;$2&quot; KB/s ⬆ &quot;$3&quot; KB/s&quot;}&#39;</span>
 </span></code></pre></div>
 (see <a href="https://github.com/lxqt/lxqt/discussions/2600">https://github.com/lxqt/lxqt/discussions/2600</a>)</p>
-<h3 id="bandwidthmonth">Bandwidth/month<a class="headerlink" href="#bandwidthmonth" title="Permanent link">#</a></h3>
+<h3 id="bandwidthmonth">Bandwidth/month:<a class="headerlink" href="#bandwidthmonth" title="Permanent link">#</a></h3>
 <p><img alt="immagine" src="https://github.com/user-attachments/assets/6f2302da-6a36-4258-85fa-8fede61096b0" />
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vnstat<span class="w"> </span>-m<span class="p">|</span>grep<span class="w"> </span>estim<span class="p">|</span>awk<span class="w"> </span><span class="err">&#39;</span><span class="o">{</span>print<span class="w"> </span><span class="nv">$8</span><span class="w"> </span><span class="nv">$9</span><span class="o">}</span>
 </span></code></pre></div></p>
-<h2 id="plugin-keyboard-indicator">Plugin Keyboard-Indicator<a class="headerlink" href="#plugin-keyboard-indicator" title="Permanent link">#</a></h2>
+<h3 id="plugin-keyboard-indicator">Plugin Keyboard-Indicator<a class="headerlink" href="#plugin-keyboard-indicator" title="Permanent link">#</a></h3>
 <p>It is possible to show country flags instead of the  ISO code  for the keyboard layout installing <code>iso-flags-svg</code> or <code>iso-flags-png</code> if provided by the distribution in use. An independent set can be found <a href="https://github.com/hampusborgos/country-flags">here</a>. The path to the folder containing the flags has to be configured manually, example <code>/usr/share/iso-flags-svg/country-4x3/%1.svg</code>. </p>
 
 

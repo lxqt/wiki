@@ -2046,7 +2046,7 @@ So if you need to compile Qt you may want to look into the various sources addre
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pacman --needed -S kguiaddons libkscreen kidletime kwindowsystem solid layer-shell-qt
 </span></code></pre></div>
 <h4 id="debian-derivatives_2">Debian, Derivatives<a class="headerlink" href="#debian-derivatives_2" title="Permanent link">#</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apt install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apt-get install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
 </span></code></pre></div>
 <h4 id="fedora_2">Fedora<a class="headerlink" href="#fedora_2" title="Permanent link">#</a></h4>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dnf install kf6-kguiaddons-devel libkscreen-qt6-devel kf6-kidletime-devel kf6-kwindowsystem-devel kf6-solid-devel layer-shell-qt-devel
@@ -2129,11 +2129,11 @@ At least on some operating systems like Arch Linux and Debian LXQt doesn't seem 
 This information applies to compiling the archive files of regular releases as well. <br />
 The names of all components in the synopsis <a href="#compiling">above</a> are links to those repositories you may just follow.   </p>
 <p>The general approach is something like
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mkdir<span class="w"> </span>build
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>cmake<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>sources&gt;<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mkdir build
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>cd build
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>cmake &lt;path to sources&gt; -DCMAKE_INSTALL_PREFIX=/usr
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>make
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>make<span class="w"> </span>install
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>make install
 </span></code></pre></div>
 Directory <code>build</code> should be outside the directory of the sources. <code>cmake</code> and <code>make</code> can and should be run by regular users, <code>make install</code> requires root privileges in order to write to the FHS. These can be acquired by <code>sudo</code>. This is depicted in section <a href="#scripts-to-build-in-one-step">Scripts to build in one step</a> and mandates an invocation <code>sudo make install</code>. But when all components are compiled on their own its probably more convenient to open an additional root session and invoke <code>make install</code> there.   </p>
 <h3 id="scripts-to-build-in-one-step">Scripts to build in one step<a class="headerlink" href="#scripts-to-build-in-one-step" title="Permanent link">#</a></h3>
@@ -2144,12 +2144,12 @@ The only components relying on autotools are libfm and libfm-extra of LXDE which
 <p>To install the software after building the scripts will acquire root permissions via <code>sudo</code>. It belongs to the <a href="#miscellaneous">Prerequisites</a> anyway but may need some configuration depending on the defaults of the various systems.</p>
 <p>First we have to prepare a local checkout of repository and source code by running <code>git</code> on the command line. <br />
 We'll start by cloning
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lxqt/lxqt.git
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git clone https://github.com/lxqt/lxqt.git
 </span></code></pre></div>
 The repository is using Git submodules to include the actual source code. So next we acquire the sources by running <br />
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">cd</span><span class="w"> </span>lxqt
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote<span class="w"> </span>--rebase
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>cd lxqt
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git submodule init
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>git submodule update --remote --rebase
 </span></code></pre></div>
 It is strongly recommended to make a backup of directory <code>lxqt</code> prepared that way so as to avoid repeating this procedure should something go wrong.   </p>
 <p>The scripts support several environment variables, see explanation in the scripts' headers. The most important ones are
@@ -2157,7 +2157,7 @@ It is strongly recommended to make a backup of directory <code>lxqt</code> prepa
 * <code>LIB_SUFFIX</code>: Path relative to <code>LXQT_PREFIX</code> libraries are stored in. Can be used to adjust the path to habits of Linux distributions where different paths like <code>/usr/lib</code>, <code>/usr/lib64</code> or <code>/usr/lib/x86_64-linux-gnu</code> can be found. Technically it is corresponding with CMake variable <code>CMAKE_LIB_SUFFIX</code>. <br />
 Should only be set when the auto-detected default doesn't work as expected.</p>
 <p>So finally we can launch by running
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">LXQT_PREFIX</span><span class="o">=</span>/usr<span class="w"> </span>./build_all_cmake_projects.sh
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>LXQT_PREFIX=/usr ./build_all_cmake_projects.sh
 </span></code></pre></div></p>
 <h3 id="qt5-support">Qt5 Support<a class="headerlink" href="#qt5-support" title="Permanent link">#</a></h3>
 <p>The script will build only with Qt6. For styling Qt5-based applications and allowing them to use LXQt file dialog, the following packages are needed, usually provided by your package manager:</p>

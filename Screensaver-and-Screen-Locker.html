@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#general" class="md-skip">
+        <a href="#wayland" class="md-skip">
           Skip to content
         </a>
       
@@ -763,18 +763,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
+  <a href="#wayland" class="md-nav__link">
     <span class="md-ellipsis">
       
-        General
+        Wayland
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="General">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -783,23 +782,7 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        X11
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="X11">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -826,17 +809,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wayland
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1243,18 +1215,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
+  <a href="#wayland" class="md-nav__link">
     <span class="md-ellipsis">
       
-        General
+        Wayland
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="General">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1263,23 +1234,7 @@
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#x11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        X11
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="X11">
+    <nav class="md-nav" aria-label="Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1306,17 +1261,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wayland
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1347,15 +1291,9 @@
 
   <h1>Screensaver/Locker</h1>
 
-<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">#</a></h2>
 <p>LXQt does not provide its own screensaver or screen locker but any arbitrary screensaver/locker can be used.</p>
-<p>In LXQt in order to use the checkbox in <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a>, lock actions from the leave-menu, panel's application menus or lxqt-runner and also lock actions configured in <a href="https://github.com/lxqt/lxqt-powermanagement#translations">lxqt-config-powermanagement</a> a screensaver/locker has to be installed.</p>
-<p>With LXQt 2.1 and later a custom screensaver can be added in "Session Settings" for both X11 and Wayland sessions.</p>
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
-<p>Locking before suspend and hibernate can be set in  <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a>. Sometimes configuring a delay is needed when the screen is visible for a short time after resume.</p>
-<p>Locking when idle or on laptop lid closure can be configured in Main menu → Settings → LXQt Settings → Power Management.</p>
-<h2 id="x11">X11<a class="headerlink" href="#x11" title="Permanent link">#</a></h2>
-<p>A xdg-screensaver compliant screensaver works automatically under X11, but also other custom screensavers/lockers can be set in "Session Settings".</p>
+<p>In LXQt in order to use the checkbox in <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a>, lock actions from the leave-menu or lxqt-runner and lock actions  configured in <a href="https://github.com/lxqt/lxqt-powermanagement#translations">lxqt-config-powermanagement</a> a xdg-screensaver compliant screensaver is needed under X11.</p>
+<p>From LXQt 2.1 on a custom screensaver can be added in "Session Settings" for both X11 and Wayland sessions</p>
 <p><code>xdg-screensaver 1.1.3</code> supports the following screensavers:</p>
 <ul>
 <li>XScreenSaver</li>
@@ -1366,22 +1304,22 @@
 </ul>
 <p>Note that the latter three will install many GTK+ dependencies.</p>
 <p>A list of available screen-lockers can be found <a href="https://wiki.archlinux.org/title/List_of_applications/Security#Screen_lockers">here</a>.</p>
-<h3 id="xscreensaver">XScreenSaver<a class="headerlink" href="#xscreensaver" title="Permanent link">#</a></h3>
+<h4 id="wayland">Wayland<a class="headerlink" href="#wayland" title="Permanent link">#</a></h4>
+<p>Available screenlockers are swaylock, hyrplock and waylock, not all compositors support all of them.
+Under kwin <code>loginctl lock-session</code> has to be used in "Session Settings" to trigger its screensaver.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
+<p>Locking before suspend and hibernate can be set in  <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a>. Sometimes configuring a delay is needed when the screen is visible for a short time after resume.</p>
+<p>Locking when idle or on laptop lid closure can be configured in Main menu → Settings → LXQt Settings → Power Management.</p>
+<h4 id="xscreensaver">XScreenSaver<a class="headerlink" href="#xscreensaver" title="Permanent link">#</a></h4>
 <p>XScreenSaver can be configured in Main menu → Settings → Screensaver.</p>
-<h3 id="other-screenlockers-using-xautolock">Other Screenlockers using Xautolock<a class="headerlink" href="#other-screenlockers-using-xautolock" title="Permanent link">#</a></h3>
+<h4 id="other-screenlockers-using-xautolock">Other Screenlockers using Xautolock<a class="headerlink" href="#other-screenlockers-using-xautolock" title="Permanent link">#</a></h4>
 <p>Xautolock provides autolocking when idle and can be configured to use any installed screenlocker.
 Please refer to <code>man xautolock</code> for more details about possible configurations. Default timeout for <em>idle</em> is 10min.</p>
-<p>A basic setup consists in adding in  <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a> under the "Autostart" section a command like <code>xautolock -locker i3lock</code>.</p>
+<p>A basic setup consists in adding in  <a href="https://github.com/lxqt/lxqt-session#lxqt-session-settings">LXQt Session Settings</a> under the "Autostart" section a command like  <code>xautolock -locker i3lock</code>.</p>
 <p>A custom screenlocker can be set manually in <code>~/.config/lxqt/lxqt.conf</code> in versions prior to LXQt 2.1:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[Screensaver]
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>lock_command=xsecurelock
 </span></code></pre></div>
-<h2 id="wayland">Wayland<a class="headerlink" href="#wayland" title="Permanent link">#</a></h2>
-<p>Working screenlockers are <code>swaylock</code>, <code>hyprlock</code> and <code>waylock</code>, not all compositors support all of them.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Under kwin_wayland <code>loginctl lock-session</code> has to be used in "Session Settings" to trigger its built-in screensaver. Disabling the screensaver in KDE's <code>systemsettings</code> is recommended as both settings will trigger it.</p>
-</div>
 
 
 

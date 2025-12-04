@@ -548,34 +548,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Launching from virtual terminals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#x11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        X11
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wayland
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -587,18 +559,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known Issues">
+    <nav class="md-nav" aria-label="Launching by display managers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1251,34 +1212,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Launching from virtual terminals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#x11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        X11
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wayland" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wayland
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1290,18 +1223,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Known Issues
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Known Issues">
+    <nav class="md-nav" aria-label="Launching by display managers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1347,9 +1269,9 @@
 
   <h1>Launch Sessions</h1>
 
-<p>LXQt X11 sessions are launched by a script <code>startlxqt</code> while LXQt Wayland sessions are launched by  <code>startlxqtwayland</code> instead. Both are handled by a binary ("session manager") <code>lxqt-session</code> which belongs to <a href="https://github.com/lxde/lxqt-session">lxqt-session</a>.  </p>
+<p>LXQt X11 sessions are launched by a script <code>startlxqt</code> and handled by a binary ("session manager") <code>lxqt-session</code> which belongs to <a href="https://github.com/lxde/lxqt-session">lxqt-session</a>.  </p>
+<p>LXQt Wayland sessions are launched by a script <code>startlxqtwayland</code> instead. </p>
 <h2 id="launching-from-virtual-terminals">Launching from virtual terminals<a class="headerlink" href="#launching-from-virtual-terminals" title="Permanent link">#</a></h2>
-<h3 id="x11">X11<a class="headerlink" href="#x11" title="Permanent link">#</a></h3>
 <p>In Linux, add the following line to the file <code>~/.xinitrc</code>.</p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">exec</span><span class="w"> </span>startlxqt
 </span></code></pre></div>
@@ -1357,26 +1279,20 @@
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">exec</span><span class="w"> </span>dbus-launch<span class="w"> </span>--exit-with-x11<span class="w"> </span>ck-launch-session<span class="w"> </span>startlxqt
 </span></code></pre></div>
 The session can be launched by invoking <code>startx</code> shell command.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Ensure one of the following conditions is true regarding the <code>~/.xinitrc</code> file:</p>
-</div>
 <blockquote>
-<ul>
-<li>only one entry exists</li>
-<li>multiple entries follow the rules described <a href="https://wiki.archlinux.org/title/xinit">here</a>.</li>
-</ul>
+<p>[!WARNING]
+Ensure one of the following conditions is true regarding the <code>~/.xinitrc</code> file:
+* only one entry exists
+* multiple entries follow the rules described <a href="https://wiki.archlinux.org/title/xinit">here</a>.</p>
 </blockquote>
-<h3 id="wayland">Wayland<a class="headerlink" href="#wayland" title="Permanent link">#</a></h3>
-<p>The Wayland session can be started directly invoking <code>startlxqtwayland</code>. It launches the compositor configured in "Session Settings &gt; Wayland Settings" which should launch <code>lxqt-session &amp;&amp; &lt;exit-command&gt;</code>.</p>
+<p>The Wayland session can be started directly invoking <code>startlxqtwayland</code>.</p>
 <h2 id="launching-by-display-managers">Launching by display managers<a class="headerlink" href="#launching-by-display-managers" title="Permanent link">#</a></h2>
-<p>Display managers like <a href="https://github.com/sddm/sddm">SDDM</a>, the one recommended for LXQt, or LightDM are looking for available x11 sessions in files <code>$XDG_DATA_DIRS/xsessions/*.desktop</code> where <code>$XDG_DATA_DIRS</code> is set to <code>/usr/share/</code> most of the times,while for the Wayland sessions the directory is <code>/usr/share/wayland-sessions/</code>. </p>
-<p>LXQt is providing the files <code>lxqt.desktop</code> and <code>lxqt-wayland.desktop</code> (if <code>lxqt-wayland-session</code> is installed) so its sessions should normally be detected and made available by display managers automatically, restarting the latter may be needed upon installing LXQt.   </p>
+<p>Display managers like <a href="https://github.com/sddm/sddm">SDDM</a>, the one recommended for LXQt, or LightDM are looking for available x11 sessions in files <code>$XDG_DATA_DIRS/xsessions/*.desktop</code> where <code>$XDG_DATA_DIRS</code> is set to <code>/usr/share/</code> most of the times,while for the Wayland sessions the directory is <code>/usr/share/wayland-sessions/</code>. 
+LXQt is providing the files <code>lxqt.desktop</code> and <code>lxqt-wayland.desktop</code> (if <code>lxqt-wayland-session</code> is installed) so its sessions should normally be detected and made available by display managers automatically, restarting the latter may be needed upon installing LXQt.   </p>
 <p>Note if LXQt was installed in <code>/usr/local</code> file <code>lxqt.desktop</code> is stored in <code>/usr/local/share/xsessions</code> which is <em>not</em> considered by most display managers. So you'll either have to copy the file to <code>/usr/share/xsessions/</code> or create a symbolic link.   </p>
-<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h2>
 <h3 id="fixing-crashes-for-apps-using-dbus-daemon-common-when-using-lxqt-config-monitor">Fixing crashes for apps using dbus-daemon (common when using lxqt-config-monitor)<a class="headerlink" href="#fixing-crashes-for-apps-using-dbus-daemon-common-when-using-lxqt-config-monitor" title="Permanent link">#</a></h3>
 <p>Important: This applies only to systems running systemd which have this problem.</p>
-<p>On some systems (like the default ArchLinux install), dbus-daemon is started as a systemd service before the xserver thus it has no $DISPLAY variable set in it's environment, leding to crashes. Systemd by default includes a script to fix this by fetching the variables in <code>/etc/X11/xinit/xinitrc.d/50-systemd-user.sh</code>. If you encounter this kind of crash add the following lines to your .xinitrc before <code>exec startlxqt</code></p>
+<p>On some systems (like the default ArchLinux install), dbus-daemon is started as a systemd service before the xserver thus it has no $DISPLAY variable set in it's environment, leding to crashes. Systemd by default includes a script to fix this by fetching the variables in /etc/X11/xinit/xinitrc.d/50-systemd-user.sh. If you encounter this kind of crash add the following lines to your .xinitrc before <code>exec startlxqt</code></p>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span>/etc/X11/xinit/xinitrc.d<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/X11/xinit/xinitrc.d/?*.sh<span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="o">[</span><span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>.<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span>
