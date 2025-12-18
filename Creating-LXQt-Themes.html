@@ -1,0 +1,2091 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lxqt-project.org/wiki/Creating-LXQt-Themes.html">
+      
+      
+        <link rel="prev" href="Theming.html">
+      
+      
+        <link rel="next" href="SettingLocale.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="_assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Creating Themes - LXQt Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="_assets/lxqt.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#structure-of-an-lxqt-theme" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="LXQt Wiki" class="md-header__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LXQt Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creating Themes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="LXQt Wiki" class="md-nav__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    LXQt Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Binary-packages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binary Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Building-from-source.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Third-party-apps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-party Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Launching-LXQt-sessions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Window-managers-%28X11%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Managers (X11)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Wayland-Session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wayland Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LXQt-Panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LXQt Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCMmanFM-Qt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PCMmanFM-Qt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Pcmanfm-qt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_actions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Screensaver-and-Screen-Locker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screensaver/Locker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Theming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Themes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Creating-LXQt-Themes.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-an-lxqt-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure of an LXQt Theme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure of an LXQt Theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-stylesheets-qss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theme Stylesheets (*.qss)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-stylesheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt stylesheets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt stylesheets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-used-by-the-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources used by the theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-previewpng-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A preview.png image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Palettes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qt-stylesheet-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt Stylesheet Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-lxqt-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theming LXQt Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Panel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-panelqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-panel.qss
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List of widgets themeable in lxqt-panel.qss">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-panel-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Panel Itself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menus-and-submenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menus and Submenus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-taskbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Taskbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-virtual-desktop-switcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Virtual Desktop Switcher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quicklaunch-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quicklaunch Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-world-clock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The World Clock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Calendar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Runner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-notification-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Notification Daemon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Notification Daemon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-notificationdqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-notificationd.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-configuration-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Configuration Center
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Configuration Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-configqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-config.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-leave-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Leave Dialog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Leave Dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-leaveqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-leave.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SettingLocale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locale Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="General.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Miscellaneous.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Reporting-bugs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contributing-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="editing-wiki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="History.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contact.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure-of-an-lxqt-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure of an LXQt Theme
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure of an LXQt Theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#theme-stylesheets-qss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theme Stylesheets (*.qss)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qt-stylesheets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt stylesheets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt stylesheets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources-used-by-the-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources used by the theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-previewpng-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A preview.png image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Palettes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#writing-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing Themes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Writing Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qt-stylesheet-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt Stylesheet Syntax
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-lxqt-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Theming LXQt Applications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Panel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Panel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-panelqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-panel.qss
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List of widgets themeable in lxqt-panel.qss">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-panel-itself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Panel Itself
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#menus-and-submenus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Menus and Submenus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-taskbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Taskbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-virtual-desktop-switcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Virtual Desktop Switcher
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-quicklaunch-toolbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quicklaunch Toolbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-world-clock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The World Clock
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Calendar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Runner
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Runner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-notification-daemon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Notification Daemon
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Notification Daemon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-notificationdqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-notificationd.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-configuration-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Configuration Center
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Configuration Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-configqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-config.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-lxqt-leave-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LXQt Leave Dialog
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The LXQt Leave Dialog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-widgets-themeable-in-lxqt-leaveqss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of widgets themeable in lxqt-leave.qss
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki/Creating-LXQt-Themes.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Creating Themes</h1>
+
+<h2 id="structure-of-an-lxqt-theme">Structure of an LXQt Theme<a class="headerlink" href="#structure-of-an-lxqt-theme" title="Permanent link">#</a></h2>
+<h3 id="theme-stylesheets-qss">Theme Stylesheets (*.qss)<a class="headerlink" href="#theme-stylesheets-qss" title="Permanent link">#</a></h3>
+<p>Themes for LXQt consist of a named directory under <code>/usr/share/lxqt/themes/</code> (global) or <code>$HOME/.local/share/lxqt/themes/</code> (per-user). Inside these folders are:</p>
+<h2 id="qt-stylesheets">Qt stylesheets<a class="headerlink" href="#qt-stylesheets" title="Permanent link">#</a></h2>
+<p>Plaintext files ending in <code>.qss</code> and containing QSS selectors and theming directives. The stylesheets correspond to the executable name of the component they apply to. If one of the stylesheets is not present, the application in question will simply fall back to the chosen Qt widget style and palette. LXQt themes currently support the following stylesheets:</p>
+<blockquote>
+<ul>
+<li><code>lxqt-panel.qss</code> - Styles the <code>lxqt-panel</code> and its plugins. <strong>This file is mandatory.</strong></li>
+<li><code>lxqt-runner.qss</code> - Styles the <code>lxqt-runner</code> dropdown, accessible with <code>Alt + F2</code>.</li>
+<li><code>lxqt-notificationd.qss</code> - Styles the <code>lxqt-notificationd</code> notification popups.</li>
+<li><code>lxqt-config.qss</code> - Styles the <code>lxqt-config</code> windows.</li>
+<li><code>lxqt-leave.qss</code> - Styles the <code>lxqt-leave</code> "end session" dialog.</li>
+</ul>
+</blockquote>
+<h3 id="resources-used-by-the-theme">Resources used by the theme<a class="headerlink" href="#resources-used-by-the-theme" title="Permanent link">#</a></h3>
+<p>Such as SVG graphics. These are used to provide an icon for the main menu and, for example, customized arrows and other small graphical elements to give your theme a unique look. You may also provide a default wallpaper (see below).</p>
+<h3 id="a-previewpng-image">A <code>preview.png</code> image<a class="headerlink" href="#a-previewpng-image" title="Permanent link">#</a></h3>
+<p>100px wide by 32px high. This is usually taken from the panel with the main menu and desktop switcher widgets in view, and provides a quick impression of what the theme looks like.</p>
+<p>Optionally, a <code>wallpaper.cfg</code> file which specifies the included desktop background, which the user may choose to apply or not from the theme switcher.</p>
+<h2 id="color-palettes">Color Palettes<a class="headerlink" href="#color-palettes" title="Permanent link">#</a></h2>
+<p>LXQt also supports user-specified palettes of 8 colors, which are applied to the base Qt widget style chosen from the theming preferences configurator. Palettes are stored under <code>/usr/share/lxqt/palettes/</code> (global) or <code>$HOME/.local/share/lxqt/palettes/</code> (per-user). These are standard plaintext files, and the 8 values are specified as HTML hex triplets (i.e., #RRGGBB).</p>
+<p>Keep in mind that some Qt widget styles are less amenable than others to picking up user-defined palette colors. In particular, Fusion and Plastik are rather well-behaved, while Oxygen enforces a shaded gradient and Kvantum will likely ignore them outright.</p>
+<p>A sample palette file, that of the base Clearlooks theme, is shown below - note the <code>[Palette]</code> header before the actual color definitions:
+ <div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[Palette]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">base_color</span><span class="o">=</span><span class="c1">#ffffff</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">highlight_color</span><span class="o">=</span><span class="c1">#80a0d0</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">highlighted_text_color</span><span class="o">=</span><span class="c1">#ffffff</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">link_color</span><span class="o">=</span><span class="c1">#0000ee</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="na">link_visited_color</span><span class="o">=</span><span class="c1">#ffb3f7</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="na">text_color</span><span class="o">=</span><span class="c1">#1a1a1a</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="na">window_color</span><span class="o">=</span><span class="c1">#edeceb</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="na">window_text_color</span><span class="o">=</span><span class="c1">#1a1a1a</span>
+</span></code></pre></div></p>
+<p>Most of these are self-explanatory. For the rest: <code>window_color</code> refers to the "bulk" of an application, such as a file manager's menubars and controls, while <code>base_color</code> would govern the display pane with the icon or list view of the filesystem in it; likewise the <code>text_color</code> and <code>window_text_color</code> definitions.</p>
+<p>LXQt themes have the ability to pick up colors from the active palette, which allows for some interesting theming possibilities. For example, this is how Azuma Hazuki's <a href=https://github.com/AzumaHazuki/lxqt-themes-mint-y>Mint-Y LXQt themes collection</a> works: rather than ship nearly two dozen redundant full themes, it consists simply of a light and dark variant along with a set of palettes, from which the themes draw their highlights and accent colors. Switching palettes changes these colors dynamically.</p>
+<h2 id="writing-themes">Writing Themes<a class="headerlink" href="#writing-themes" title="Permanent link">#</a></h2>
+<h3 id="qt-stylesheet-syntax">Qt Stylesheet Syntax<a class="headerlink" href="#qt-stylesheet-syntax" title="Permanent link">#</a></h3>
+<p>The syntax of .qss stylesheets should be immediately familiar to anyone who has worked with CSS, and is covered in great detail <a href=https://doc.qt.io/qt-6/stylesheet-reference.html>here</a>. Aspiring theme creators should be familiar with the <a href=https://doc.qt.io/qt-6/stylesheet-customizing.html#box-model>box model</a> and the <a href=https://doc.qt.io/qt-6/stylesheet-syntax.html>precedence rules</a> of QSS selectors.</p>
+<p>Broadly speaking, QSS operates on an "outside-in" model, whereby more general selectors are overridden by more specific ones. The hypothetical case
+<div class="language-css highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">*</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#00ff00</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#000000</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">QMenu</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffff00</span><span class="p">;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="mh">#000040</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div>
+will produce green text on a pure black background everywhere <em>except</em> standard Qt menus, which will have yellow text on a navy-blue background.</p>
+<h2 id="theming-lxqt-applications">Theming LXQt Applications<a class="headerlink" href="#theming-lxqt-applications" title="Permanent link">#</a></h2>
+<p>LXQt includes many widgets derived from the base Qt classes, which are generally addressed with a <code>#</code> to denote that they are identifiers, rather than classes or class families of widgets; for example, <code>#MainMenu</code> references the "Start Menu" plugin of the LXQt panel, while <code>#MainMenu QMenu { some_option: something; }</code> will theme only those widgets of type QMenu that descend from (that is, which are created by and embedded in) the <code>#MainMenu</code> plugin itself.</p>
+<p><strong>Important: widgets beginning with a <code>#</code> will not pass their theming directives down to their descendants.</strong> This is why it is necessary to style, for example, <code>#TaskBar QToolButton</code> to alter taskbar buttons</p>
+<p>While it is not mandatory to theme any specific widget or plugin in any specific order, there are some best practices to keep in mind for legible and maintainable theme files:</p>
+<ol>
+<li>Try to theme specific widgets and their descendants close to one another - keep your menu theme directives separate from the ones for the taskbar, clock, etc.</li>
+<li>Because QSS specifiers have higher priority the more specific they are, it is good practice to place those specifying broader or more general rules closer to the top of the file. Within sections for individual plugins/widgets, it is likewise good to specify the top-level identifier first and then its sub-widgets, their subcontrols and pseudostates, and so forth, under these.</li>
+<li>However, if you specifically wish to theme different widgets identically, you may further save space by defining them with a comma-separated list of selectors. For example, if you wish your taskbar and desktop switcher buttons to have the same appearance, you can try something like
+ <div class="language-css highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">#</span><span class="nn">TaskBar</span><span class="w"> </span><span class="nt">QToolButton</span><span class="o">,</span><span class="w"> </span><span class="p">#</span><span class="nn">DesktopSwitch</span><span class="w"> </span><span class="nt">QToolButton</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="n">property</span><span class="p">:</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">other_property</span><span class="p">:</span><span class="w"> </span><span class="n">other_value</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">}</span>
+</span></code></pre></div></li>
+</ol>
+<h2 id="the-lxqt-panel">The LXQt Panel<a class="headerlink" href="#the-lxqt-panel" title="Permanent link">#</a></h2>
+<p>The LXQt panel consists of a base executable which draws a horizontal (or vertical) area onto the screen, optionally and by default reserving space for itself so as not to be covered by application windows. Everything we normally associate with a panel - application menu, taskbar, system tray, clock, and so forth - is a plugin, a small self-contained applet which is drawn in a specific position on the panel and which may be interacted with via mouse, keyboard, touch, etc.</p>
+<h3 id="list-of-widgets-themeable-in-lxqt-panelqss">List of widgets themeable in <code>lxqt-panel.qss</code><a class="headerlink" href="#list-of-widgets-themeable-in-lxqt-panelqss" title="Permanent link">#</a></h3>
+<h4 id="the-panel-itself">The Panel Itself<a class="headerlink" href="#the-panel-itself" title="Permanent link">#</a></h4>
+<p><code>LXQtPanel #BackgroundWidget</code>
+The groundmass of the panel, which will show below/around any other widgets</p>
+<h4 id="menus-and-submenus">Menus and Submenus<a class="headerlink" href="#menus-and-submenus" title="Permanent link">#</a></h4>
+<p><code>#MainMenu</code>
+The "start menu" button plugin, visible on the panel.
+* Add an icon with <code>qproperty-icon: url(path/to/image.ext);</code>
+* Theme submenus with <code>#MainMenu QMenu</code>
+* * <code>#TopLevelMainMenu</code> lets you explicitly theme <em>only</em> the initial menu popup; useful for faking a Win9x/2000-style banner, as seen <a href=https://github.com/pixelocdguy/windows-classic>here</a>
+* Theme the search entry with <code>#MainMenu QMenu QLineEdit</code>
+* Theme the search results with<code>#MainMenu ActionView</code></p>
+<p><code>QMenu</code>
+Themes standard QMenu child widgets of the panel, such as the right-click menus.
+* Has subcontrols <code>::(item,left-arrow,right-arrow,indicator)</code>
+* * All subcontrols may be in <code>:(hover,selected,disabled)</code> pseudostates
+* * * The <code>::indicator</code> subcontrol also has the radiobutton-like <code>:exclusive:checked</code>/<code>:exclusive:unchecked</code> and checkbox-like <code>:non-exclusive:checked</code>/<code>:non-exclusive:unchecked</code> pseudostates. You may theme these with <code>image: url(path/to/image.ext);</code> directives.
+* <code>QMenu QToolButton</code> allows you to theme the <em>headers</em> of menus, which are implemented as QToolButton objects.</p>
+<h4 id="the-taskbar">The Taskbar<a class="headerlink" href="#the-taskbar" title="Permanent link">#</a></h4>
+<p><code>#TaskBar</code>
+The background of the taskbar. May be set to <code>background: transparent;</code> to inherit the color from <code>LXQtPanel #BackgroundWidget</code> if desired.</p>
+<p>Taskbar buttons are addressed with <code>#TaskBar QToolButton</code> and have the following pseudostates:</p>
+<ul>
+<li><code>#TaskBar QToolButton:on</code> is the active state, corresponding to the focused application's button.</li>
+<li><code>#TaskBar QToolButton:hover</code> is the appearance of an inactive task's button when the cursor is on top of it.</li>
+<li><code>#TaskBar QToolButton:pressed</code> is the appearance of a task button when receiving a left click event.</li>
+<li><code>#TaskBar QToolButton[urgent="true"]</code> is the appearance of a task button which has set the standard urgency hint. Note the lack of a leading <code>:</code> here.</li>
+</ul>
+<p>Logically-valid combinations of these states are possible, such as
+* <code>#TaskBar QToolButton:on:hover</code>, which is the appearance of the active task button when the cursor is on top of it.</p>
+<p>The pseudostates will derive their <code>padding</code>, <code>margin</code>, etc. values from the base <code>#TaskBar QToolButton</code> block, though you may alter these if desired.</p>
+<h4 id="the-virtual-desktop-switcher">The Virtual Desktop Switcher<a class="headerlink" href="#the-virtual-desktop-switcher" title="Permanent link">#</a></h4>
+<p><code>#DesktopSwitch</code>
+Most window managers have the ability to implement virtual desktops, and this widget produces a set of buttons to display, track, and allow switching between these. LXQt is designed to be WM-agnostic, so the plugin <em>should</em> work with any compliant window manager's implementation of virtual desktops.</p>
+<p><code>#DesktopSwitch QToolButton</code> works exactly the same as its taskbar variant above, and it is possible and encouraged to declare them both together if you wish your theme to draw them identically; see <a href=https://github.com/lxqt/lxqt/wiki/Creating-LXQt-Themes/#theming-lxqt-applications>here</a> for how.</p>
+<h4 id="the-quicklaunch-toolbar">The Quicklaunch Toolbar<a class="headerlink" href="#the-quicklaunch-toolbar" title="Permanent link">#</a></h4>
+<p><code>#QuickLaunch</code>
+The Quicklaunch plugin provides a space for the user to drag-and-drop icons from the main menu, enabling simple one-click access to them.
+ <code>#QuickLaunch QToolButton</code> will theme the individual app buttons that have been dragged-and-dropped into the launcher dock.</p>
+<p><code>#QuickLaunchPlaceHolder</code> themes the "drop application icons here" area and caption of a default (empty) Quicklaunch toolbar.</p>
+<h4 id="the-world-clock">The World Clock<a class="headerlink" href="#the-world-clock" title="Permanent link">#</a></h4>
+<p><code>#WorldClock</code>
+The LXQt WorldClock plugin is able to display time, date, and timezone in a fully-localizable, standards-compliant manner. It also displays a calender when clicked, about which see below.
+* <code>#WorldClock</code> themes the area of the panel reserved for the clock widget as a whole.
+* <code>#WorldClockContent</code> specifically themes the caption of the clock widget.</p>
+<h4 id="the-calendar">The Calendar<a class="headerlink" href="#the-calendar" title="Permanent link">#</a></h4>
+<p><code>QCalendarWidget</code>
+ <strong>TODO: Please document the many, many, <em>many</em> options for the QCalendarWidget plugin here.</strong> The <a href=https://github.com/lxqt/lxqt-themes/blob/master/themes/kvantum/lxqt-panel.qss>Kvantum theme</a> may be a good place to look.</p>
+<h2 id="the-lxqt-runner">The LXQt Runner<a class="headerlink" href="#the-lxqt-runner" title="Permanent link">#</a></h2>
+<p>The LXQt Runner is a self-contained dropdown widget, similar to KDE Plasma's <code>krunner</code>, which accepts text input and updates search results in real time. It is accessible by pressing <code>Alt + F2</code> (by default) in a running LXQt session.</p>
+<h3 id="list-of-widgets-themeable">List of widgets themeable<a class="headerlink" href="#list-of-widgets-themeable" title="Permanent link">#</a></h3>
+<p><code>#panel</code>
+ This is the body of the LXQt Runner application
+<code>#closeButton</code>
+Clicking this closes the LXQt runner. Theme with <code>qproperty-icon: url(path/to/image.ext);</code>
+<code>#actionButton</code>
+ Clicking this displays the logout/shutdown menu. Theme with <code>qproperty-icon: url(path/to/image.ext);</code>
+<code>#commandEd</code>
+ This is the command-entry area, and takes the same options as a QLineEdit widget.
+<code>#commandList</code>
+ The list of filtered items matching what is typed in the #commandEd above.
+ Has subcontrol <code>::item</code>, which has pseudostates <code>:alternate,:hover,:selected</code>.
+<code>#QMenu</code>
+ This is the logout/shutdown menu displayed when the user clicks the #actionButton widget.</p>
+<h2 id="the-lxqt-notification-daemon">The LXQt Notification Daemon<a class="headerlink" href="#the-lxqt-notification-daemon" title="Permanent link">#</a></h2>
+<p>Listens for standard FreeDesktop.org notification events and displays transient popups when these occur.</p>
+<h3 id="list-of-widgets-themeable-in-lxqt-notificationdqss">List of widgets themeable in <code>lxqt-notificationd.qss</code><a class="headerlink" href="#list-of-widgets-themeable-in-lxqt-notificationdqss" title="Permanent link">#</a></h3>
+<p><code>Notification</code>
+ This is the body of the notification message itself.
+<code>#closeButton</code>
+ Appears in the corner of the notification. Style with <code>qproperty-icon: url(path/to/image.ext);</code>
+<code>#appLabel</code>
+ Caption showing the name of the application that threw the notification in question.</p>
+<h2 id="the-lxqt-configuration-center">The LXQt Configuration Center<a class="headerlink" href="#the-lxqt-configuration-center" title="Permanent link">#</a></h2>
+<p>It's the central hub for configuring how LXQt operates. It is analagous to Xfce's <code>xfce4-settings-manager</code>, GNOME's <code>gnome-control-center</code>, KDE Plasma's <code>systemsettings</code>, and so forth.</p>
+<h3 id="list-of-widgets-themeable-in-lxqt-configqss">List of widgets themeable in <code>lxqt-config.qss</code><a class="headerlink" href="#list-of-widgets-themeable-in-lxqt-configqss" title="Permanent link">#</a></h3>
+<p><code>QToolTip</code>
+Styles the tooltip.</p>
+<h2 id="the-lxqt-leave-dialog">The LXQt Leave Dialog<a class="headerlink" href="#the-lxqt-leave-dialog" title="Permanent link">#</a></h2>
+<p>A simple window that appears when the user selects Leave from the main menu or otherwise invokes it.</p>
+<h3 id="list-of-widgets-themeable-in-lxqt-leaveqss">List of widgets themeable in <code>lxqt-leave.qss</code><a class="headerlink" href="#list-of-widgets-themeable-in-lxqt-leaveqss" title="Permanent link">#</a></h3>
+<p><code>QDialog</code>
+The main body of the Leave Dialog is a QDialog widget.
+<code>QLabel</code>
+ Styles the "What would you like the computer to do?" and "Are you sure you want to {logout/shutdown/hibernate}?" captions.
+<code>QAbstractItemView</code>
+The six action icons are contained inside a QAbstractItemView widget.</p>
+<blockquote>
+<p>[!NOTE] 
+<code>background: #RRGGBB;</code> and similar <em>do not work</em>; to get around this, create a 1x1 image file of the color you would like to apply behind the icons and apply it with <code>background-image: url(path/to/image.ext);</code>. You can still theme the captions (<code>color: #RRGGBB</code>) and apply borders, margins, etc., but for now the background does not accept simple colors.</p>
+</blockquote>
+<p><code>QPushButton</code>
+ The yes/no buttons on child dialogs are QPushButton widgets.
+<code>QToolButton</code>
+ The "Cancel" button on the main dialog is a QToolButton. It may be wise to theme both together with <code>QPushButton, QToolButton { ... }</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "search.suggest", "content.code.copy", "content.action.edit"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

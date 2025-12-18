@@ -1,0 +1,1840 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lxqt-project.org/wiki/Pcmanfm-qt.html">
+      
+      
+        <link rel="prev" href="LXQt-Panel.html">
+      
+      
+        <link rel="next" href="custom_actions.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="_assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>General - LXQt Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="_assets/lxqt.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gvfs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="LXQt Wiki" class="md-header__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LXQt Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="LXQt Wiki" class="md-nav__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    LXQt Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Binary-packages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binary Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Building-from-source.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Third-party-apps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-party Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Launching-LXQt-sessions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Window-managers-%28X11%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Managers (X11)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Wayland-Session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wayland Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LXQt-Panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LXQt Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCMmanFM-Qt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PCMmanFM-Qt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Pcmanfm-qt.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gvfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GVFS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-view-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing View Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-wheel-scrolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mouse Wheel Scrolling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-dnd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab DND
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permanently-deleting-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permanently Deleting Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwardbackward-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward/Backward History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bulk Renaming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-folder-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing Folder Icons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emblems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emblems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-filesfolders-without-renaming-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Files/Folders without Renaming Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-mode-vs-root-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Admin Mode" vs. Root Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trusting-executables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trusting Executables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-desktop-under-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Desktop under Wayland
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_actions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Screensaver-and-Screen-Locker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screensaver/Locker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Theming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Creating-LXQt-Themes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SettingLocale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locale Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="General.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Miscellaneous.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Reporting-bugs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contributing-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="editing-wiki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="History.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contact.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gvfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GVFS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-view-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing View Settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-wheel-scrolling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mouse Wheel Scrolling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tab-dnd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tab DND
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permanently-deleting-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permanently Deleting Files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forwardbackward-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forward/Backward History
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filter Bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyboard Navigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bulk-renaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bulk Renaming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-folder-icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing Folder Icons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emblems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emblems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hiding-filesfolders-without-renaming-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hiding Files/Folders without Renaming Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-mode-vs-root-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        "Admin Mode" vs. Root Instance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trusting-executables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trusting Executables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-desktop-under-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Desktop under Wayland
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki/Pcmanfm-qt.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>General</h1>
+
+<p>This document is about advanced and, in some cases, hidden properties or functionalities of PCManFM-Qt.</p>
+<ul>
+<li><a href="#custom-actions">Custom Actions</a></li>
+</ul>
+<h3 id="gvfs">GVFS<a class="headerlink" href="#gvfs" title="Permanent link">#</a></h3>
+<p>GVFS is an important optional dependency of PCManFM-Qt (<code>libfm-qt</code>). Although PCManFM-Qt does not depend on it explicitly, it provides important functionalities like Trash support. Its name appears in several places of the current document.</p>
+<p>It is highly recommended that you install the GVFS packages that you may need from your distro repository. If you do not know what each GVFS package does, install all of them.</p>
+<h3 id="view-modes">View Modes<a class="headerlink" href="#view-modes" title="Permanent link">#</a></h3>
+<p>PCManFM-Qt has four view modes: icon view, thumbnail view, compact view, and detailed list view. You can choose the default mode in Preferences → Behavior → Default view mode (it is icon view by default).</p>
+<p>In addition, there are four toolbar buttons for changing the mode. They do not change the default mode, but you can use them to switch to another mode temporarily. For example, if the default mode is icon view and you need a detailed list temporarily, you could click the "Detailed List" button on toolbar. Also, see <a href="#customizing-view-settings">Customizing View Settings</a>.</p>
+<h3 id="customizing-view-settings">Customizing View Settings<a class="headerlink" href="#customizing-view-settings" title="Permanent link">#</a></h3>
+<p>The item sorting, showing of hidden items and view mode can be changed globally. The item sorting and visibility of hidden items can be changed by using the folder's right-click menu; then subsequent windows will reflect the changes. The view mode can be changed permanently only in Preferences (see <a href="#view-modes">View Modes</a>).</p>
+<p>But each folder can also have customized view settings of its own. To customize a folder, check <code>View → Customized View Settings → Preserve Settings for This Folder</code> or, more easily, right click the tab and check the same menu item. After that, any change in the view settings of that folder — including the view mode, that can be changed by using view toolbar buttons — will be preserved for it, without affecting other folders.</p>
+<p>For example, if you have a folder containing images, you could check the above-mentioned menu item for it and click the "Thumbnail View" toolbar button. Then, that folder will always show big thumbnails of images (their size can be changed in Preferences → Display → Size of thumbnails), while other folders will have the default view mode.</p>
+<p>If you want to customize a folder <em>and</em> all its sub-folders, you should check "Preserve Settings Recursively from Here" in the same menu instead. With that item checked, any change in view settings of the folder is preserved for its sub-folders too. If you change the view settings of a sub-folder <em>separately</em>, the changes will be temporary because it should take its permanent settings from the parent folder.</p>
+<p>The above-mentioned menu may also have other items, whose functioning you could easily guess.</p>
+<p>The view mode of a customized folder is reflected by its tab icon. The existence of a tab icon is a sign of view customization.</p>
+<h3 id="mouse-wheel-scrolling">Mouse Wheel Scrolling<a class="headerlink" href="#mouse-wheel-scrolling" title="Permanent link">#</a></h3>
+<p>Wheel scrolling over the scroll-bar follows Qt's default behavior. But when the cursor is inside the main view, the behavior depends on the view mode, as explained here.</p>
+<p>In the icon and thumbnail views, which support large icons, Qt's default scroll jumps can make it difficult to keep track of items. As a workaround and for user convenience, the scrolling is smooth by default and its speed depends on the icon size. The following table shows the speed inside icon and thumbnail views.</p>
+<table>
+<thead>
+<tr>
+<th>Icon Size</th>
+<th>Scroll Speed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>256</td>
+<td>half the row</td>
+</tr>
+<tr>
+<td>≥ 96 and &lt; 256</td>
+<td>one row</td>
+</tr>
+<tr>
+<td>≥ 64 and &lt; 96</td>
+<td>two rows</td>
+</tr>
+<tr>
+<td>&lt; 64</td>
+<td>DE setting</td>
+</tr>
+</tbody>
+</table>
+<p>Under LXQt, the DE setting can be changed in <code>Keyboard and Mouse Settings → Mouse → Wheel scroll lines</code>.</p>
+<p>In the detailed list mode, the scroll speed is always that of the DE. In the compact mode, at most one column is scrolled at a time.</p>
+<p>If you want the minimum speed, press <code>Shift</code> while turning the mouse wheel inside the view.</p>
+<p>Because of a Qt bug in updating views with huge numbers of items, an option has been added for disabling smooth scrolling (Preferences → Display → Disable smooth  scrolling).</p>
+<h3 id="tab-dnd">Tab DND<a class="headerlink" href="#tab-dnd" title="Permanent link">#</a></h3>
+<p>Tabs can be reordered by the mouse. In Addition, <em>if the main view is not split</em>, they can be detached or moved from one window to another.</p>
+<p>When there is more than one tab, to detach a tab, drag and drop it outside all windows of PCManFM-Qt. Then, a new window will be created for the dropped tab.</p>
+<p>To move a tab to another window, drag and drop it into that window. If the source window has only one tab, it will disappear after the tab is moved.</p>
+<h3 id="permanently-deleting-files">Permanently Deleting Files<a class="headerlink" href="#permanently-deleting-files" title="Permanent link">#</a></h3>
+<p>If GVFS Trash support is installed, to delete a file permanently — in contrast to moving it into Trash — use <code>Shift + Delete</code>.</p>
+<p>If you do not want Trash at all, you could uncheck Preferences → Behavior → File operations → Move deleted files to "trash bin" instead of erasing from disk.</p>
+<h3 id="forwardbackward-history">Forward/Backward History<a class="headerlink" href="#forwardbackward-history" title="Permanent link">#</a></h3>
+<p>Each tab of PCManFM-Qt has a forward/backward history. To access and use it, right click the "Go Back" and "Go Forward" buttons on the tool bar. You can move through the history by clicking the items of the right click menu.</p>
+<h3 id="filter-bar">Filter Bar<a class="headerlink" href="#filter-bar" title="Permanent link">#</a></h3>
+<p>If <code>View → Toolbars → Permanent filter bar</code> is checked, you should type inside the filter bar to filter files/folders. That may not be comfortable because you need to focus the filter bar for filtering and refocus the main view after filtering, e.g., by clicking inside them or using shortcuts.</p>
+<p>To filter files/folders more easily, <em>uncheck</em> the above-mentioned item and type <em>inside the main view</em>. Once you type the first letter, the filter bar appears and filtering starts, while the main view keeps the focus.</p>
+<p>To remove filtering, just press <code>Escape</code> or click the Clear icon of the filter bar (<code>Ctrl + K</code> can also be used). If you had selected some files before removing the filter, your selection will be preserved.</p>
+<p>Let us call this a "transient filter bar". For the sake of consistency, if the filter bar is transient and <em>if there is no selection</em>, the first <code>Space</code> that is typed inside the view will only select the <em>current item</em>, without starting filtering. The current item may be marked by widget styles in different ways, e.g. it may have a dotted rectangle around its name or a faded line below it. There can only be one current item inside a focused widget. In Qt, the current item is selected by <code>Space</code> and deselected by <code>Ctrl + Space</code> everywhere; hence making an exception for the first <code>Space</code>.</p>
+<p>For pasting text into the transient filter bar, press <code>Shift + Insert</code> inside the view. Of course, you could also show and focus the filter bar with <code>Ctrl + I</code> but <code>Shift + Insert</code> guarantees that the focus remains on the view.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pressing and holding <code>Backspace</code> is not a good way of clearing the transient filter bar  because the selected file may change. Pressing <code>Escape</code> is always the best and easiest way.</p>
+</div>
+<h3 id="keyboard-navigation">Keyboard Navigation<a class="headerlink" href="#keyboard-navigation" title="Permanent link">#</a></h3>
+<p>When a folder is opened, by default the first item is <em>focused</em> but not selected. The focused item is also called the <em>current item</em>, as mentioned in the previous section. In Qt, the current item is selected by (<code>Ctrl</code> +) <code>Space</code> and deselected by <code>Ctrl + Space</code>. This Qt behavior is inherited by PCManFM-Qt. Some users — especially those who come from the GTK world — may expect that the current item should be selected by an arrow key. That is not the case in Qt: arrow keys are directional by definition and so, they select the items around the current item.</p>
+<p>For changing the current item without selecting it, <code>Ctrl</code> plus an arrow key can be used. Then the new current item can be selected by <code>Ctrl + Space</code>. In this way, non-consecutive items can be selected by using keyboard.</p>
+<p>The <code>Escape</code> key changes the focus to the main view from anywhere, and <code>Ctrl + Escape</code> focuses the side-pane. To focus the path entry (aka. location bar), use <code>Ctrl + L</code>. Also, see <code>Help → Hidden Shortcuts</code> for more shortcuts.</p>
+<p>When the view is focused and the split view is activated (<code>F6</code>), the <code>Tab</code> key switches between the split views.</p>
+<h3 id="bulk-renaming">Bulk Renaming<a class="headerlink" href="#bulk-renaming" title="Permanent link">#</a></h3>
+<p>Bulk Renaming is a method of renaming multiple files without getting a prompt dialog for each one.</p>
+<p>To rename files in bulk, select them and press <code>SHIFT + F2</code> or click <code>Edit → Bulk Rename</code>. A dialog will show up, in which you could choose a name that is suffixed by <code>#</code>. <code>#</code> will be replaced by consecutive numbers, starting from 0 or any number you might choose in the spin-box of the Bulk Rename dialog. You could also put <code>#</code> at the start of the name or inside it.</p>
+<p>If you confirm the dialog by pressing OK or <code>Enter</code>, the selected files will be renamed according to your chosen pattern, while their extensions, if any, will be preserved.</p>
+<h3 id="changing-folder-icons">Changing Folder Icons<a class="headerlink" href="#changing-folder-icons" title="Permanent link">#</a></h3>
+<p>The icon of a folder can be changed in the <em>File Properties</em> dialog. Show <em>File Properties</em> by right clicking the folder and clicking <em>Properties</em> or by selecting it and pressing <code>Alt + Enter/Return</code>. There is a button on the top left of the <code>General</code> page. If you click it, a file dialog will be opened inside your active icon theme, where you could choose a customized icon for that folder.</p>
+<p>To remove the customized icon of a folder, open it, show the hidden files inside it and delete the hidden file named <code>.directory</code>.</p>
+<p>You can also edit the hidden file <code>.directory</code> and put any image path in front of <code>Icon=</code>. The path can be relative to the current folder.</p>
+<p>Icons of files cannot be changed because they show their mime types; they depend on the active icon theme.</p>
+<h3 id="emblems">Emblems<a class="headerlink" href="#emblems" title="Permanent link">#</a></h3>
+<p>The first tab of File Properties dialog has a button for adding an emblem to a file — or a selection of files — and another button for clearing it. Emblems are small icons that appear at the bottom right corner of the main icon and should be chosen from the active icon theme. They require GVFS.</p>
+<p>Emblems are user-specific. They are not really added to files but are attributed to them by the current user. So, they are not preserved when files are copied or transferred.</p>
+<p>GVFS allows multiple emblems for each file but the File Properties dialog only sets one because the other corners of a file's icon are preserved for other purposes (like the symlink emblem).</p>
+<p>Emblems can be used to distinguish certain files visually, especially non-folder files, whose icons cannot be changed.</p>
+<h3 id="hiding-filesfolders-without-renaming-them">Hiding Files/Folders without Renaming Them<a class="headerlink" href="#hiding-filesfolders-without-renaming-them" title="Permanent link">#</a></h3>
+<p>A really hidden file has a name that starts with a dot. But, sometimes, you may not want to rename a file to make it hidden, e.g., when that file is used by an app. Also, folders like <code>lost+found</code> belong to root and should not be renamed.</p>
+<p>Some file managers have a way of making files "virtually hidden". Technically, those files are not hidden but only treated as hidden by the file managers in question.</p>
+<p>PCManFM-Qt has the above-mentioned functionality. To hide files without renaming them, create the file <code>.hidden</code> inside their parent directory and add to it the names of the files you want to hide in separate lines.</p>
+<p>For example, you may create <code>~/.hidden</code> as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Public
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Templates
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Certain File
+</span></code></pre></div>
+<p>Then, the folders <code>Public</code> and <code>Templates</code> as well as the file <code>Certain File</code> inside your home directory are treated as hidden by PCManFM-Qt and some other file managers.</p>
+<blockquote>
+<p>[!NOTE]
+Editing <code>.hidden</code> does not have an immediate effect because <code>GLib</code> (which does the file management in PCManFM-Qt) uses cache. It will take effect the next time its containing folder is opened. You could also wait a few seconds and reload the folder.</p>
+</blockquote>
+<h3 id="thumbnails">Thumbnails<a class="headerlink" href="#thumbnails" title="Permanent link">#</a></h3>
+<p>PCManFM-Qt (actually, <code>libfm-qt</code>) creates thumbnails of images internally — installation of <code>qt-imageformats</code> and <a href="https://api.kde.org/frameworks/kimageformats/html/index.html"><code>kimageformats</code></a> can extend the range of its supported formats considerably — but it can also use external thumbnailers for other formats or kinds of files.</p>
+<p>User-defined thumbnailers can be created inside the directory <code>~/.local/share/thumbnailers</code>. For each new thumbnailer to be seen, PCManFM-Qt needs to be restarted from <em>LXQt Session Settings</em> → <em>Desktop</em>.</p>
+<p>The following examples show how to add user-defined thumbnailers for DjVu and PDF files. You can use them as a guide for creating other kinds of thumbnailers.</p>
+<p>To have thumbnails for DjVu files, create a file like <code>~/.local/share/thumbnailers/djvu-djvu.thumbnailer</code> as,</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[Thumbnailer Entry]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Exec=ddjvu -format=tiff -page=1 -size=%sx%s %i %o
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>MimeType=image/vnd.djvu+multipage;image/vnd.djvu;
+</span></code></pre></div>
+<p>Then restart PCManFM-Qt. Of course, you need <code>ddjvu</code>, which belongs to <code>djvulibre</code>.</p>
+<p>For PDF files, you can install <code>graphicsmagick</code> and create <code>~/.local/share/thumbnailers/graphicsmagick-pdf.thumbnailer</code> as,</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[Thumbnailer Entry]
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Exec=gm convert -quality 100 -thumbnail %s -flatten %i[0] %o
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>MimeType=application/pdf;application/x-pdf;image/pdf;application/x-gzpostscript;application/postscript;application/vnd.ms-xpsdocument;
+</span></code></pre></div>
+<p>Again, restart PCManFM-Qt.</p>
+<p>The file can have any name but its extension should be <code>.thumbnailer</code>. It should start with <code>[Thumbnailer Entry]</code> and have two keys, namely, <code>Exec</code> and <code>MimeType</code>.</p>
+<p>The value of the <code>MimeType</code> key tells which file types should have thumbnails.</p>
+<p>The value of the <code>Exec</code> key tells how thumbnails are created. It is a command-line that depends on the thumbnailing application but it always includes three elements: <code>%s</code> for the image size, <code>%i</code> for the "input" (the file whose thumbnail should be created), and <code>%o</code> for the "output" (the thumbnail itself). You need to be familiar with the thumbnailing application to know how it can create an image with a specific size out of a file. Then replace input, output and image size with <code>%i</code>, <code>%o</code> and <code>%s</code> in its command-line respectively and put it in front of <code>Exec=</code>.</p>
+<p>In rare cases, you may want to disable a thumbnailer, which is installed as root, without removing its application. To do so, copy it from <code>/usr/share/thumbnailers/</code> (or <code>/usr/local/share/thumbnailers/</code>) to <code>~/.local/share/thumbnailers/</code>, change its <code>MimeType</code> line to something like <code>MimeType=application/nothing;</code>, and restart PCManFM-Qt.</p>
+<h3 id="admin-mode-vs-root-instance">"Admin Mode" vs. Root Instance<a class="headerlink" href="#admin-mode-vs-root-instance" title="Permanent link">#</a></h3>
+<p>PCManFM-Qt can be launched as root under X11. The menu-item that does that is <code>Tools → Open Tab in Root Instance</code>. The command in <code>Preferences → Advanced → Switch user command</code> should be something like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lxsudo dbus-run-session -- %s
+</span></code></pre></div>
+<p>But a root instance may not be safe for various reasons. Moreover, no root instance is possible under Wayland. If you only want to transfer files that are owned by root, you could use the admin mode instead. Its menu-item is <code>Tools → Open Tab in Admin Mode</code>. The admin mode requires GVFS.</p>
+<p>You cannot open files in the admin mode, unless the associated applications support it. Most apps do not, especially Qt apps (however, FeatherPad can open text files in the admin mode if the user has the reading permission). But it can be useful with file transference.</p>
+<p>Because the admin mode is provided by GVFS, PCManFM-Qt just calls it, without having control over it. For example, it has a time-out, after which, the root password will be asked again. PCManFM-Qt cannot change that.</p>
+<h3 id="trusting-executables">Trusting Executables<a class="headerlink" href="#trusting-executables" title="Permanent link">#</a></h3>
+<p>By default, executable files are not "trusted", which means that a prompt dialog will be shown if the user (double) clicks them. Desktop entries (files whose real names end with <code>.desktop</code>), that are not inside <code>~/.local/share/applications</code> or <code>/usr/share/applications</code>, may have a special emblem on their icons, showing that they are not trusted. The emblem depends on the icon set but, usually, it is like an exclamation mark. Other kinds of executables do not have this emblem.</p>
+<p>You can select the option <code>Preferences → Behavior → Launch executable files without prompt</code> to remove the prompt for all executables but, by doing so, you might compromise your system because you might click a suspicious executable unintentionally.</p>
+<p>There is a safer way of trusting executables: you could right click them and check "Trust this executable" (or "Trust selected executables" in the case of multiple selection) if you really trust them. If an executable is a desktop entry, its special emblem will disappear.</p>
+<p>Like some other important properties, trusting executables requires GVFS. Without GVFS, the trust state will be lost in the next session.</p>
+<h3 id="profiles">Profiles<a class="headerlink" href="#profiles" title="Permanent link">#</a></h3>
+<p>PCManFM-Qt has a <code>--profile</code> option, which can be used for having different configurations when needed. For example, this command starts the desktop module with the profile <code>myProfile</code>:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pcmanfm-qt<span class="w"> </span>--desktop<span class="w"> </span>--profile<span class="o">=</span>myProfile
+</span></code></pre></div>
+<p>Users usually do not need to set it. It is set to <code>lxqt</code> when the desktop module is started by the LXQt Session and is <code>default</code> when omitted.</p>
+<p>When PCManFM-Qt is started with a profile <code>xyz</code>, it (creates and) uses the configuration files inside the folder <code>~/.config/pcmanfm-qt/xyz/</code>. In this way, the application can be started with different configurations under different desktop environments. Please note that only the LXQt Session sets it automatically. If you need a specific profile for another DE, you should set it explicitly, e.g., in front of <code>Exec=</code> in a desktop entry that you may make for that DE.</p>
+<h3 id="using-desktop-under-wayland">Using Desktop under Wayland<a class="headerlink" href="#using-desktop-under-wayland" title="Permanent link">#</a></h3>
+<p>Since its version 2.0.0, PCManFM-Qt's desktop is fully functional under Wayland compositors which implement the <code>wl-layer-shell</code> protocol, e.g., KWin and <code>wlroots</code>-based compositors like LabWC, Wayfire,…</p>
+<p>For avoiding the current problems of multi-screen desktops under Wayland, each screen is given its separate desktop with a separate items layout in version 2.1.0.</p>
+<p>Unfortunately, Qt cannot distinguish between the desktop geometry and the <em>available</em> desktop geometry under Wayland yet. The latter is the geometry excluding the areas reserved by the window manager for panels, task bars, etc. For this reason, you may need to change margins in <code>Desktop Preferences → General → Spacing → Margins of work area</code>, such that the desktop items do not go under the reserved areas.</p>
+<hr />
+<p>However, if you set up your Wayland desktop, your X11 desktop will also be affected, and conversely. If you switch between X11 and Wayland frequently, you might not want that. PCManFM-Qt's <code>--profile</code> option can solve this problem inside an LXQt session:</p>
+<ol>
+<li>Make an executable script <code>lxqt-desktoploader</code> like this, which uses another profile on Wayland:</li>
+</ol>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$XDG_SESSION_TYPE</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;wayland&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nb">exec</span><span class="w"> </span>pcmanfm-qt<span class="w"> </span>--desktop<span class="w"> </span>--profile<span class="o">=</span>lxqtwayland
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">else</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nb">exec</span><span class="w"> </span>pcmanfm-qt<span class="w"> </span>--desktop<span class="w"> </span>--profile<span class="o">=</span>lxqt
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">fi</span>
+</span></code></pre></div>
+<ol>
+<li>Put <code>/etc/xdg/autostart/lxqt-desktop.desktop</code> into the folder <code>~/.config/autostart/</code>, and change the value of its <code>Exec=</code> to the path of <code>lxqt-desktoploader</code>.</li>
+<li>Copy the folder <code>~/.config/pcmanfm-qt/lxqt</code> as <code>~/.config/pcmanfm-qt/lxqtwayland</code> to transfer your settings from X11 to Wayland.</li>
+<li>Log out and log in.</li>
+</ol>
+<p>Then the X11 and Wayland settings of PCManFM-Qt will be separate from each other and will not interfere with each other.</p>
+<hr />
+<p>Like in X11, PCManFM-Qt's destop draws the background under Wayland. But, since version 2.1.0, you can also let a Wayland wallpaper/background app draw the background of PCManFM-Qt's desktop. To do so, first set PCManFM-Qt's wallpaper to any transparent image — the simplest transparent image can be an SVG file like</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;svg</span><span class="w"> </span><span class="na">width=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">version=</span><span class="s">&quot;1.1&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span><span class="w"> </span><span class="na">height=</span><span class="s">&quot;200&quot;</span><span class="w"> </span><span class="na">viewBox=</span><span class="s">&quot;0 0 200 200&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Then make sure that the wallpaper app starts <em>before</em> PCManFM-Qt's desktop — with a Wayland LXQt session, that will happen automatically if it is auto-started by the Wayland compositor. With this setup, PCManFM-Qt will draw desktop items, while the background will be drawn by the app.</p>
+<h3 id="custom-actions">Custom Actions<a class="headerlink" href="#custom-actions" title="Permanent link">#</a></h3>
+<p>Custom actions are explained separately. See <a href="https://github.com/lxqt/pcmanfm-qt/wiki/custom_actions">Custom Actions</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "search.suggest", "content.code.copy", "content.action.edit"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

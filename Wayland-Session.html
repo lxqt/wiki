@@ -1,0 +1,1984 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lxqt-project.org/wiki/Wayland-Session.html">
+      
+      
+        <link rel="prev" href="Window-managers-%28X11%29.html">
+      
+      
+        <link rel="next" href="LXQt-Panel.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="_assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Wayland Settings - LXQt Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="_assets/lxqt.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#compositors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="LXQt Wiki" class="md-header__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LXQt Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wayland Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="LXQt Wiki" class="md-nav__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    LXQt Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Binary-packages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binary Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Building-from-source.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Third-party-apps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-party Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Launching-LXQt-sessions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Window-managers-%28X11%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Managers (X11)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wayland Settings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Wayland-Session.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wayland Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compositors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compositors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabled-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabled Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxqt-panels-wayland-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LXQt Panel's Wayland Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-lockers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screen Lockers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Shortcuts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Shortcuts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brightness-volume-multimedia-keys-xf86-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brightness, Volume, Multimedia Keys (XF86-*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-tools-mostly-for-wlroots-not-kwin_wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Third party tools (mostly for wlroots, not kwin_wayland)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-tips-and-tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues, Tips and Tricks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issues, Tips and Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooltips-and-popups-qt-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooltips and popups (Qt bugs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-icons-in-taskbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic Icons in Taskbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-icons-under-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop icons under the panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcing-use-of-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forcing use of Wayland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-monitor-when-idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn off monitor when idle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Turn off monitor when idle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kwin_wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kwin_wayland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Niri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyprland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyprland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labwc-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labwc, others
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-finger-swipe-to-switch-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-finger-swipe to switch workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshots-with-grimslurp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots with grim/slurp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-icons-in-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action icons in the panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-keyboard-layout-in-panel-2-layouts-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display keyboard layout in panel (2 layouts only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-sddm-under-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running SDDM under Wayland
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LXQt-Panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LXQt Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCMmanFM-Qt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PCMmanFM-Qt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Pcmanfm-qt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_actions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Screensaver-and-Screen-Locker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screensaver/Locker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Theming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Creating-LXQt-Themes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SettingLocale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locale Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="General.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Miscellaneous.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Reporting-bugs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contributing-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="editing-wiki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="History.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contact.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#compositors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compositors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabled-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabled Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxqt-panels-wayland-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LXQt Panel's Wayland Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-lockers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screen Lockers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Shortcuts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Global Shortcuts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brightness-volume-multimedia-keys-xf86-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brightness, Volume, Multimedia Keys (XF86-*)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#global-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global Scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#third-party-tools-mostly-for-wlroots-not-kwin_wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Third party tools (mostly for wlroots, not kwin_wayland)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issues-tips-and-tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issues, Tips and Tricks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Issues, Tips and Tricks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tooltips-and-popups-qt-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tooltips and popups (Qt bugs)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generic-icons-in-taskbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generic Icons in Taskbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-icons-under-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop icons under the panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forcing-use-of-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Forcing use of Wayland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-monitor-when-idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turn off monitor when idle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Turn off monitor when idle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kwin_wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kwin_wayland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#niri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Niri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyprland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hyprland
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#labwc-others" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Labwc, others
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-finger-swipe-to-switch-workspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-finger-swipe to switch workspace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshots-with-grimslurp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screenshots with grim/slurp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-icons-in-the-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action icons in the panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-keyboard-layout-in-panel-2-layouts-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Display keyboard layout in panel (2 layouts only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-sddm-under-wayland" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running SDDM under Wayland
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki/Wayland-Session.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Wayland Settings</h1>
+
+<p>For an overall Wayland support, LXQt 2.1.0 or later is required, while most components already support Wayland in V2.0.x. To start a LXQt Wayland Session select "LXQt (Wayland)" in your display manager. From tty the session can be started with <code>startlxqtwayland</code>.</p>
+<p><a href="https://github.com/lxqt/lxqt-wayland-session">lxqt-wayland-session</a> has to be installed for enabling "Wayland Settings" in "Session Settings". The panel can choose a specific backend for each compositor to enable workspace switcher, other workspace related menu-items, and more. In LXQt 2.3 the available backends are X11 (xcb), one for kwin_wayland, one for Wayfire and general one for wlroots-compatible compositors.</p>
+<h2 id="compositors">Compositors<a class="headerlink" href="#compositors" title="Permanent link">#</a></h2>
+<p>The compositor can be chosen in "Session Settings" under "Wayland Settings". The supported stacking compositors are labwc, Wayfire and kwin_wayland, while the tiling ones are Hyprland, Niri, River and Sway. For a working taskbar the compositor should support <code>wlr-foreign-toplevel-management-unstable-v1</code> protocol. For starting an LXQt session under other compositors, the command <code>lxqt-session &amp;&amp; &lt;logout_command&gt;</code> has to be added in the autostart setting of the compositor. Forks of the aforementioned compositors should work fine all.</p>
+<p>For the supported compositors, minimal default settings based on their default settings are shipped and will be installed in <code>~/.config/lxqt/wayland/</code> folder at the first start, except for <code>kwin_wayland</code> and labwc, where the default configurations are used. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some distributions, notably OpenSuse, may use also different location for labwc config.</p>
+</div>
+<p>GUI configuration tools are available for labwc (<a href="https://github.com/labwc/labwc-tweaks">labwc-tweaks</a>), niri (<a href="https://github.com/stefonarch/niri-settings">niri-settings</a>), Wayfire (<a href="https://github.com/WayfireWM/wcm">wcm</a>) and kwin (Plasma's <code>systemsettings</code>. Customized menu entries for LXQt can be installed from <a href="https://github.com/lxqt/lxqt-WM-integration-files#kwin_wayland">here</a>.</p>
+<blockquote>
+<p>[!NOTE] 
+Consider disabling the shortcut for exiting directly the compositor to avoid accidental killing of the session.</p>
+</blockquote>
+<h2 id="disabled-components">Disabled Components<a class="headerlink" href="#disabled-components" title="Permanent link">#</a></h2>
+<p>Some components cannot be used under Wayland, and an information dialog will be shown if they are launched there. This includes "Shortcut Keys", power key settings in "Power Management", and "Monitor Settings" which works only under kwin_wayland. Instead in "Keyboard and Mouse" some settings are not present - all those settings are handled directly by the compositor now and can be configured in its settings. Some panel widgets are not supported at all (Keyboard State) or not on every compositor (Desktop Switcher, Show Desktop), depending on whether there is a dedicated backend available or not. Some right click menu-items of task-bar buttons are grayed out if unavailable. See the table for an overview (LXQt ≥ 2.3):</p>
+<p><img width="1125" height="819" alt="table-wiki" src="https://github.com/user-attachments/assets/471221f2-7683-48ef-8efd-c33aa1bf9711" /></p>
+<p>*) On tiling compositors the desktop is shown on empty workspaces.</p>
+<p>ScreenGrab ≥ 3.0 has support for Wayland.</p>
+<h2 id="lxqt-panels-wayland-backends">LXQt Panel's Wayland Backends<a class="headerlink" href="#lxqt-panels-wayland-backends" title="Permanent link">#</a></h2>
+<p>As of May 2025, two Wayland backends are available: kwin_wayland and one for wlroots-compatible compositors, which will be automatically detected for all seven supported compositors.</p>
+<p>For special cases the backend to load can be forced manually for any desktop specified in <code>XDG_CURRENT_DESKTOP</code> by a comma-separated list in <code>~/.config/lxqt/panel.conf</code>:
+<div class="language-ini highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[General]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">…</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">preferred_backend</span><span class="o">=</span><span class="s">labwc:wlroots, niri:wlroots, xyz:my_own_backend</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">…</span>
+</span></code></pre></div></p>
+<h2 id="screen-lockers">Screen Lockers<a class="headerlink" href="#screen-lockers" title="Permanent link">#</a></h2>
+<p>Supported/tested screenlockers are <code>swaylock</code>, <code>waylock</code> and <code>hyprlock</code>. On kwin_wayland <code>loginctl lock-session</code> has to be set in the input field. Other Wayland screenlockers may work as well.</p>
+<h2 id="global-shortcuts">Global Shortcuts<a class="headerlink" href="#global-shortcuts" title="Permanent link">#</a></h2>
+<p>Shortcuts are handled exclusively by the compositor. Because of that, applications launched by such shortcuts might not exit decently on logging out if they are running before the session ends. That might result in unsaved settings on logging out. The reason is that their processes are not controlled by LXQt Session.</p>
+<p>As a workaround, you can use shortcuts that launch applications through lxqt-session's <em>D-BUS interface</em> (with lxqt-session ≥ 2.2.0 or git), which makes them exit gracefully when the session ends. In LXQt ≥ 2.3 a wrapper script <code>lxqt-qdbus</code> is available which simplifies the command syntax. An example for labwc:</p>
+<p>Instead of</p>
+<p><div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;action</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="w"> </span><span class="na">command=</span><span class="s">&quot;featherpad&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+Use</p>
+<p><div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;action</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="w"> </span><span class="na">command=</span><span class="s">&quot;qdbus6 org.lxqt.session /LXQtSession execDesktopFile featherpad.desktop&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+Using the wrapper script the application name has to be used:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;action</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="w"> </span><span class="na">command=</span><span class="s">&quot;lxqt-qdbus run featherpad&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>The names of desktop files can be found in <code>/usr/share/applications/</code>. The full command is:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>qdbus6<span class="w"> </span>org.lxqt.session<span class="w"> </span>/LXQtSession<span class="w"> </span>execDesktopFile<span class="w"> </span>DESKTOP_FILE_NAME_OR_PATH
+</span></code></pre></div>
+except on Suse/Fedora:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>qdbus-qt6<span class="w"> </span>org.lxqt.session<span class="w"> </span>/LXQtSession<span class="w"> </span>execDesktopFile<span class="w"> </span>DESKTOP_FILE_NAME_OR_PATH
+</span></code></pre></div></p>
+<p>Also, a desktop file can be made for any executable file, and its full path can be used in a command like above. But, for a desktop file inside <code>$XDG_DATA_DIRS/applications/</code>, the file name is enough.</p>
+<h3 id="brightness-volume-multimedia-keys-xf86-">Brightness, Volume, Multimedia Keys (XF86-*)<a class="headerlink" href="#brightness-volume-multimedia-keys-xf86-" title="Permanent link">#</a></h3>
+<p>Please check your compositor configuration if some of them aren't working. Sway, for example, uses <code>pactl</code> (part of libpulse) for volume, while labwc and Wayfire use <code>pamixer</code> by default, which may not be present in your installation. The already mentioned wrapper script will act directly on the volume plugin on the panel:
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>lxqt-qdbus<span class="w"> </span>volume<span class="w"> </span>up<span class="p">|</span>down<span class="p">|</span>mute
+</span></code></pre></div></p>
+<h2 id="global-scaling">Global Scaling<a class="headerlink" href="#global-scaling" title="Permanent link">#</a></h2>
+<p><em>The global screen scaling of "LXQt Session Settings" is only for X11 and should not be used on Wayland.</em> Wayland supports per-monitor scaling, and best results can be achieved in the settings of the compositor, if existing. 
+Examples:</p>
+<p>Hyprland: <code>monitor=,preferred,auto,1.2</code></p>
+<p>Sway: <code>Output eDP-1 scale 1.2</code></p>
+<p>With all compositors that support <code>wlr-output-management protocol</code>, <a href="https://sr.ht/~emersion/kanshi/">kanshi</a> or <a href="https://github.com/hw0lff/shikane">shikane</a> can be configured. With kwin_wayland, KDE's <code>systemsettings</code> is the best tool.</p>
+<h2 id="third-party-tools-mostly-for-wlroots-not-kwin_wayland">Third party tools (mostly for wlroots, not kwin_wayland)<a class="headerlink" href="#third-party-tools-mostly-for-wlroots-not-kwin_wayland" title="Permanent link">#</a></h2>
+<ul>
+<li><code>swayidle</code> Screen blanking/monitor off in combination with <code>wlopm</code></li>
+<li><code>swaybg</code> Background below desktop (splash)</li>
+<li><code>lswt</code> list Wayland toplevels (windows), useful for window rules</li>
+<li><code>wlrctl</code> Command line utility for miscellaneous wlroots extensions</li>
+<li><code>wlopm</code> Turn off monitor(s)</li>
+<li><code>wtype</code> Sending keystrokes (p.e. in custom command plugin or shortcuts)</li>
+<li><code>kanshi</code> Monitor settings</li>
+<li><code>wdisplay</code> Monitor settings on the fly</li>
+<li><code>copyQ</code> Clipboard manager; <em>works fine under kwin_wayland</em> as well as wlroots</li>
+<li><code>wvkbd</code> Virtual keyboard</li>
+<li><code>wev</code> List keypress and mouse events</li>
+<li><code>grim</code> and <code>slurp</code> Screenshot</li>
+<li><code>wf-recorder</code> Screencast</li>
+<li><code>wshot</code> GUI for screenshots</li>
+</ul>
+<h2 id="issues-tips-and-tricks">Issues, Tips and Tricks<a class="headerlink" href="#issues-tips-and-tricks" title="Permanent link">#</a></h2>
+<h3 id="tooltips-and-popups-qt-bugs">Tooltips and popups (Qt bugs)<a class="headerlink" href="#tooltips-and-popups-qt-bugs" title="Permanent link">#</a></h3>
+<ul>
+<li>On bottom and right panels some tooltips and some popups align to screen border.</li>
+</ul>
+<p>See <a href="https://github.com/lxqt/lxqt-panel/issues/2092">https://github.com/lxqt/lxqt-panel/issues/2092</a> for status.</p>
+<h3 id="generic-icons-in-taskbar">Generic Icons in Taskbar<a class="headerlink" href="#generic-icons-in-taskbar" title="Permanent link">#</a></h3>
+<p>Check "Use icons by window class" in taskbar settings.</p>
+<h3 id="desktop-icons-under-the-panel">Desktop icons under the panel<a class="headerlink" href="#desktop-icons-under-the-panel" title="Permanent link">#</a></h3>
+<p>Read <a href="https://github.com/lxqt/pcmanfm-qt/wiki#using-desktop-under-wayland">https://github.com/lxqt/pcmanfm-qt/wiki#using-desktop-under-wayland</a></p>
+<h3 id="forcing-use-of-wayland">Forcing use of Wayland<a class="headerlink" href="#forcing-use-of-wayland" title="Permanent link">#</a></h3>
+<p>Applies to electron-based apps like VS Code, Slack, Discord, Spotify, Obsidian, Element (Matrix client) and also to Chrome/Chromium based browsers:</p>
+<p><code>.config/electron-flags.conf</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>--enable-features=UseOzonePlatform
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>--ozone-platform=wayland
+</span></code></pre></div>
+* Darktable:<code>GDK_BACKEND=wayland darktable</code> (can be added in the <code>.desktop</code> file)</p>
+<h3 id="turn-off-monitor-when-idle">Turn off monitor when idle<a class="headerlink" href="#turn-off-monitor-when-idle" title="Permanent link">#</a></h3>
+<p>LXQt's power manager settings for turning off the monitor will work fine if you use the configuration dialog of version 2.2.2 or later or manually add a line to <code>~/.config/lxqt/power.conf</code> for previous versions:</p>
+<h4 id="kwin_wayland">kwin_wayland<a class="headerlink" href="#kwin_wayland" title="Permanent link">#</a></h4>
+<p>Make sure you have <code>kscreen-doctor</code>. It is provided by <code>libkscreen</code> in Arch.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">monitorOffCommand_wayland</span><span class="o">=</span>kscreen-doctor<span class="w"> </span>--dpms<span class="w"> </span>off
+</span></code></pre></div>
+<h4 id="niri">Niri<a class="headerlink" href="#niri" title="Permanent link">#</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">monitorOffCommand_wayland</span><span class="o">=</span>niri<span class="w"> </span>msg<span class="w"> </span>action<span class="w"> </span>power-off-monitors
+</span></code></pre></div>
+<h4 id="hyprland">Hyprland<a class="headerlink" href="#hyprland" title="Permanent link">#</a></h4>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">monitorOffCommand_wayland</span><span class="o">=</span>hyprctl<span class="w"> </span>dispatch<span class="w"> </span>dpms<span class="w"> </span>off
+</span></code></pre></div>
+To wake up all monitors it needs in <code>lxqt-hyprland.conf</code> under "misc":
+<div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">misc</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="err">...</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="err">mouse_move_enables_dpms=true</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="err">key_press_enables_dpms=true</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</span></code></pre></div></p>
+<h4 id="labwc-others">Labwc, others<a class="headerlink" href="#labwc-others" title="Permanent link">#</a></h4>
+<p>Make sure <code>wlopm</code> is installed; works only for an external monitor. Use <code>wlopm</code> to get the monitor name. Examples:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">monitorOffCommand_wayland</span><span class="o">=</span>wlopm<span class="w"> </span>--off<span class="w"> </span>HDMI-A-1
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">monitorOffCommand_wayland</span><span class="o">=</span>wlopm<span class="w"> </span>--off<span class="w"> </span><span class="s2">&quot;*&quot;</span>
+</span></code></pre></div>
+A tool which apparently works with all screens is <a href="https://github.com/lilydjwg/dpms-off">https://github.com/lilydjwg/dpms-off</a>, but it needs more tests by more users.</p>
+<p>The other actions of the LXQt idleness watcher work in all supported compositors, but this action only works with the above commands for now, and you can control it in the right-click menu of the battery tray icon, as in X11. Use <code>swayidle</code> or  <code>hypridle</code> with other compositors.</p>
+<h3 id="3-finger-swipe-to-switch-workspace">3-finger-swipe to switch workspace<a class="headerlink" href="#3-finger-swipe-to-switch-workspace" title="Permanent link">#</a></h3>
+<p>Default in niri, can be enabled in Hyprland and Wayfire. For other compositors as kwin and Hyprland a workaround can be used.</p>
+<p><code>~/.config/libinput-gestures.conf</code> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a># Add this to auto-start in compositor: libinput-gestures-setup start
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a># https://github.com/bulletmark/libinput-gestures
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a># sway
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>gesture: swipe left 3   swaymsg -t command workspace next_on_output
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>gesture: swipe right 3  swaymsg -t command workspace prev_on_output
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a># labwc (with C-A-right configured in rc.xml)
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>gesture: swipe left 3   wtype  -M ctrl -M alt -P right
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>gesture: swipe right 3 wtype  -M ctrl -M alt -P left
+</span></code></pre></div>
+<h3 id="screenshots-with-grimslurp">Screenshots with grim/slurp<a class="headerlink" href="#screenshots-with-grimslurp" title="Permanent link">#</a></h3>
+<p>Although <code>ScreenGrab</code> is working (check out its command line options!) you may find useful using them.</p>
+<p>Save to executable files <code>screenshot_full</code> and <code>screenshot_area</code> and set shortcuts like Alt+Print/Ctrl+Print.
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>grim<span class="w"> </span>/tmp/screen_full_<span class="k">$(</span>date<span class="w"> </span>+<span class="s1">&#39;%a_%T_.png&#39;</span><span class="k">)</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w"> </span>notify-send<span class="w"> </span>-a<span class="w"> </span>grim<span class="w"> </span>-i<span class="w"> </span>screengrab<span class="w"> </span>-t<span class="w"> </span><span class="m">2000</span><span class="w"> </span><span class="s2">&quot;Full screenshot saved&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>lximage-qt<span class="w"> </span>/tmp/screen_full_<span class="k">$(</span>date<span class="w"> </span>+<span class="s1">&#39;%a_%T_.png&#39;</span><span class="k">)</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>grim<span class="w"> </span>-g<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>slurp<span class="w"> </span>-d<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-<span class="w"> </span><span class="p">|</span><span class="w"> </span>wl-copy<span class="w"> </span>-t<span class="w"> </span>image/png<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>notify-send<span class="w"> </span>-a<span class="w"> </span>grim<span class="w"> </span>-i<span class="w"> </span>screengrab<span class="w"> </span>-t<span class="w"> </span><span class="m">2000</span><span class="w"> </span><span class="s2">&quot;Screenshot saved to clipboard&quot;</span>
+</span></code></pre></div></p>
+<h3 id="action-icons-in-the-panel">Action icons in the panel<a class="headerlink" href="#action-icons-in-the-panel" title="Permanent link">#</a></h3>
+<p>Custom command plugin can trigger actions for which shortcuts are configured, using <code>wtype</code>. Example: Go to workspace right|left.</p>
+<h3 id="display-keyboard-layout-in-panel-2-layouts-only">Display keyboard layout in panel (2 layouts only)<a class="headerlink" href="#display-keyboard-layout-in-panel-2-layouts-only" title="Permanent link">#</a></h3>
+<p>Add to XKB_DEFAULT_OPTIONS: <code>grp_led:scroll</code>, example labwc:
+<code>XKB_DEFAULT_OPTIONS=grp:caps_toggle,grp_led:scroll</code></p>
+<p>Add 
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span>/sys/class/leds/input3<span class="se">\:\:</span>scrolllock/brightness<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;US&quot;</span><span class="p">;</span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;DE&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+</span></code></pre></div></p>
+<p>as command. Repeat every second. <code>/sys/class/leds/input3</code> can be different on different OS.</p>
+<h2 id="running-sddm-under-wayland">Running SDDM under Wayland<a class="headerlink" href="#running-sddm-under-wayland" title="Permanent link">#</a></h2>
+<p><code>/etc/sddm.conf</code>:</p>
+<p><div class="language-ini highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">[General]</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="na">...</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="na">DisplayServer</span><span class="o">=</span><span class="s">wayland</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">[Wayland]</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="na">...</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="na">SessionLogFile</span><span class="o">=</span><span class="s">/tmp/wayland-session.log</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="na">CompositorCommand</span><span class="o">=</span><span class="s">labwc</span>
+</span></code></pre></div>
+SDDM uses <code>/var/lib/sddm/</code> as home directory where the compositor should be configured, otherwise default settings will be applied:</p>
+<p><code>/var/lib/sddm/.config/labwc/rc.xml</code>:
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">&lt;labwc_config&gt;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="nt">&lt;keyboard&gt;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="nt">&lt;keybind</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;A-Space&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">      </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ShowMenu&quot;</span><span class="w"> </span><span class="na">menu=</span><span class="s">&quot;client-menu&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">    </span><span class="nt">&lt;/keybind&gt;</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nt">&lt;keybind</span><span class="w"> </span><span class="na">key=</span><span class="s">&quot;A-k&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">      </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Execute&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">        </span><span class="nt">&lt;command&gt;</span>wvkbd-mobintl<span class="nt">&lt;/command&gt;</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">      </span><span class="nt">&lt;/action&gt;</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="nt">&lt;/keybind&gt;</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="nt">&lt;/keyboard&gt;</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">  </span><span class="nt">&lt;mouse&gt;</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="nt">&lt;default</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="nt">&lt;/mouse&gt;</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">  </span><span class="nt">&lt;libinput&gt;</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">    </span><span class="nt">&lt;device</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">      </span><span class="nt">&lt;naturalScroll&gt;</span>no<span class="nt">&lt;/naturalScroll&gt;</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">      </span><span class="nt">&lt;pointerSpeed&gt;</span>0.8<span class="nt">&lt;/pointerSpeed&gt;</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">      </span><span class="nt">&lt;accelProfile&gt;</span>adaptive<span class="nt">&lt;/accelProfile&gt;</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">      </span><span class="nt">&lt;tap&gt;</span>yes<span class="nt">&lt;/tap&gt;</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">      </span><span class="nt">&lt;disableWhileTyping&gt;</span>yes<span class="nt">&lt;/disableWhileTyping&gt;</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">    </span><span class="nt">&lt;/device&gt;</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">  </span><span class="nt">&lt;/libinput&gt;</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="nt">&lt;/labwc_config&gt;</span>
+</span></code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "search.suggest", "content.code.copy", "content.action.edit"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

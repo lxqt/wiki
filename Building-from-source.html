@@ -1,0 +1,2228 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lxqt-project.org/wiki/Building-from-source.html">
+      
+      
+        <link rel="prev" href="Binary-packages.html">
+      
+      
+        <link rel="next" href="Third-party-apps.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="_assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Building from Source - LXQt Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="_assets/lxqt.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="LXQt Wiki" class="md-header__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LXQt Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Building from Source
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="LXQt Wiki" class="md-nav__button md-logo" aria-label="LXQt Wiki" data-md-component="logo">
+      
+  <img src="_assets/lxqt.svg" alt="logo">
+
+    </a>
+    LXQt Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lxqt/lxqt" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Binary-packages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Binary Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building from Source
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Building-from-source.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt-extensions-developed-by-kde-team-frameworks-kscreen-layer-shell-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt extensions developed by KDE team (Frameworks, KScreen, Layer-shell-qt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt extensions developed by KDE team (Frameworks, KScreen, Layer-shell-qt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miscellaneous">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives-ubuntu-see-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives (Ubuntu see below)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalbuild-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General/Build Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General/Build Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-2-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0 (2 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-2-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I (2 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-4-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II (4 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-4-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III (4 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iv-all-remaining-packages-in-any-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV - All remaining packages in any order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiling-all-components-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiling all components individually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-to-build-in-one-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts to build in one step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt5-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt5 Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Third-party-apps.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-party Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Usage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Launching-LXQt-sessions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Window-managers-%28X11%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window Managers (X11)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Wayland-Session.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wayland Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LXQt-Panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LXQt Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PCMmanFM-Qt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PCMmanFM-Qt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Pcmanfm-qt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="custom_actions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Screensaver-and-Screen-Locker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Screensaver/Locker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Theming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Creating-LXQt-Themes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SettingLocale.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locale Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="General.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Miscellaneous.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miscellaneous
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Translation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Translation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Reporting-bugs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting Bugs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contributing-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="editing-wiki.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Editing the Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="History.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Contact.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build environment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt-extensions-developed-by-kde-team-frameworks-kscreen-layer-shell-qt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt extensions developed by KDE team (Frameworks, KScreen, Layer-shell-qt)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Qt extensions developed by KDE team (Frameworks, KScreen, Layer-shell-qt)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Miscellaneous">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arch-linux_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arch Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debian-derivatives-ubuntu-see-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debian, Derivatives (Ubuntu see below)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fedora_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fedora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opensuse_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openSUSE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalbuild-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General/Build Order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General/Build Order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-2-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0 (2 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-2-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I (2 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-4-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II (4 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iii-4-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III (4 packages)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iv-all-remaining-packages-in-any-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV - All remaining packages in any order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compiling-all-components-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compiling all components individually
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-to-build-in-one-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripts to build in one step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qt5-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qt5 Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/lxqt/wiki/edit/main/docs/lxqt.wiki/Building-from-source.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Building from Source</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
+<p>While using precompiled binary packages will be appropriate most of the time compiling from sources may very well make sense, too, e. g. to run latest development versions if these aren't available on a particular operating system. So here's a guide how to achieve this.</p>
+<p>If running latest development snapshots is your intent please note that these can be compiled in a very convenient way on Arch Linux using its <a href="https://aur.archlinux.org">AUR</a> and that corresponding repositories exist in Debian and openSUSE as well, see [[Binary packages|Binary-packages]].   </p>
+<p>We'll try to be verbose yet basic knowledge about working on the shell, package management and how to compile using CMake and GNU make is needed.  <br />
+The descriptions stated below should work on any operating system of the *ix ecosystem, that is on all current Linux distributions as well as on BSD. For now distinct packages of Arch Linux, Debian / Ubuntu, Fedora and openSUSE are stated only. Additional distributions may be added.</p>
+<p>As for Debian to build the release 1.4.x Debian version 12 ("bookworm") is mandatory while to build version 2.0 and higher Debian 13 is needed.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>Before compiling it is strongly recommended to remove any preexisting LXQt and associated components which were installed other than according to this guide (updating by following the guide once more hasn't been thoroughly tested yet but should work without issues).   </p>
+<p>Next we need to install the dependencies to compile LXQt. These are the build environment as well as the various components needed by the software we are going to compile.   </p>
+<h3 id="build-environment">Build environment<a class="headerlink" href="#build-environment" title="Permanent link">#</a></h3>
+<p>A CMake version ≥ 3.1.8 is required, see documentation of your distribution.   </p>
+<h4 id="arch-linux">Arch Linux<a class="headerlink" href="#arch-linux" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pacman --needed -S base-devel cmake git pkgconf
+</span></code></pre></div>
+<h4 id="debian-derivatives">Debian, Derivatives<a class="headerlink" href="#debian-derivatives" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>apt install build-essential cmake git
+</span></code></pre></div>
+<h4 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dnf group install c-development
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>dnf install cmake git
+</span></code></pre></div>
+<h4 id="opensuse">openSUSE<a class="headerlink" href="#opensuse" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>zypper install -t pattern devel_basis
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>zypper install cmake git
+</span></code></pre></div>
+<h3 id="qt">Qt<a class="headerlink" href="#qt" title="Permanent link">#</a></h3>
+<p>Qt version ≥6.6 is required now. Compiling Qt from its sources isn't exactly a trivial task and not within the scope of this document. <br />
+So if you need to compile Qt you may want to look into the various sources addressing this topic (and optionally tell us about your experience).   </p>
+<h4 id="arch-linux_1">Arch Linux<a class="headerlink" href="#arch-linux_1" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pacman --needed -S qt6-base qt6-svg qt6-tools 
+</span></code></pre></div>
+<h4 id="debian-derivatives_1">Debian, Derivatives<a class="headerlink" href="#debian-derivatives_1" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>apt install qt6-base-private-dev libqt6svg6-dev qt6-tools-dev qt6-tools-dev-tools libpolkit-qt6-1-dev qt6-wayland-private-dev
+</span></code></pre></div>
+<h4 id="fedora_1">Fedora<a class="headerlink" href="#fedora_1" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>dnf install qt6-qtbase-devel qt6-qtsvg-devel qt6-qttools-devel
+</span></code></pre></div>
+<h4 id="opensuse_1">openSUSE<a class="headerlink" href="#opensuse_1" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>zypper install libqt6-qtbase-private-headers-devel libqt6-qtsvg-devel libqt6-qttools-devel qt6-waylandclient-private-devel
+</span></code></pre></div>
+<h3 id="qt-extensions-developed-by-kde-team-frameworks-kscreen-layer-shell-qt">Qt extensions developed by KDE team (Frameworks, KScreen, Layer-shell-qt)<a class="headerlink" href="#qt-extensions-developed-by-kde-team-frameworks-kscreen-layer-shell-qt" title="Permanent link">#</a></h3>
+<h4 id="arch-linux_2">Arch Linux<a class="headerlink" href="#arch-linux_2" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>pacman --needed -S kguiaddons libkscreen kidletime kwindowsystem solid layer-shell-qt
+</span></code></pre></div>
+<h4 id="debian-derivatives_2">Debian, Derivatives<a class="headerlink" href="#debian-derivatives_2" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>apt install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
+</span></code></pre></div>
+<h4 id="fedora_2">Fedora<a class="headerlink" href="#fedora_2" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>dnf install kf6-kguiaddons-devel libkscreen-qt6-devel kf6-kidletime-devel kf6-kwindowsystem-devel kf6-solid-devel layer-shell-qt-devel
+</span></code></pre></div>
+<h4 id="opensuse_2">openSUSE<a class="headerlink" href="#opensuse_2" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>zypper install kguiaddons-devel libkscreen2-devel kidletime-devel kwindowsystem-devel solid-devel layer-shell-qt
+</span></code></pre></div>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">#</a></h3>
+<h4 id="arch-linux_3">Arch Linux<a class="headerlink" href="#arch-linux_3" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pacman --needed -S bash libstatgrab alsa-lib libpulse lm_sensors libconfig muparser upower polkit-qt6 sudo xorg-xmessage libxss libxcursor libxcomposite libxcb libxkbcommon-x11  libfm menu-cache gtk-update-icon-cache hicolor-icon-theme xdg-utils xdg-user-dirs oxygen-icons openbox libxslt
+</span></code></pre></div>
+<h4 id="debian-derivatives-ubuntu-see-below">Debian, Derivatives (Ubuntu see below)<a class="headerlink" href="#debian-derivatives-ubuntu-see-below" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>apt install bash gtk-update-icon-cache hicolor-icon-theme libasound2-dev libconfig-dev libdbusmenu-qt5-dev libexif-dev libfm-dev libjson-glib-dev libmenu-cache-dev libmuparser-dev libpolkit-agent-1-dev  libpulse-dev libsensors-dev libstatgrab-dev libudev-dev libupower-glib-dev libx11-xcb-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-image0-dev libxcb-randr0-dev libxcb-screensaver0-dev libxcb-util0-dev libxcomposite-dev libxcursor-dev libxdamage-dev libxi-dev libxkbcommon-x11-dev libxss-dev libxtst-dev openbox-dev oxygen-icon-theme sudo x11-utils xdg-user-dirs xdg-utils xserver-xorg-input-libinput-dev libproc2-dev
+</span></code></pre></div>
+<h4 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">#</a></h4>
+<p>Same as Debian but replace <code>gtk-update-icon-cache</code> with <code>libgtk2.0-bin</code>.</p>
+<h4 id="fedora_3">Fedora<a class="headerlink" href="#fedora_3" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>dnf install systemd-devel bash libstatgrab-devel alsa-lib-devel pulseaudio-libs-devel lm_sensors-devel libconfig-devel muParser-devel upower-devel polkit-devel polkit-qt5-1-devel sudo libexif-devel xorg-x11-apps libSM-devel libXScrnSaver-devel libXcursor-devel libXcomposite-devel libxcb-devel xcb-util-devel libxkbcommon-x11-devel dbusmenu-qt5-devel libfm-devel menu-cache-devel gtk-update-icon-cache hicolor-icon-theme xdg-utils xdg-user-dirs oxygen-icon-theme openbox openbox-devel libxslt-devel
+</span></code></pre></div>
+<h4 id="opensuse_3">openSUSE<a class="headerlink" href="#opensuse_3" title="Permanent link">#</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>zypper install bash libstatgrab-devel alsa-devel libpulse-devel libsensors4-devel libconfig-devel muparser-devel libupower-glib-devel libpolkit-qt6-1-devel sudo libexif-devel xmessage libXss-devel libXcursor-devel libXcomposite-devel libxcb-devel xcb-util-devel libxkbcommon-x11-devel  libfm-devel menu-cache-devel gtk3-tools hicolor-icon-theme xdg-utils xdg-user-dirs oxygen6-icon-theme openbox-devel libxslt-devel
+</span></code></pre></div>
+<h2 id="compiling">Compiling<a class="headerlink" href="#compiling" title="Permanent link">#</a></h2>
+<h3 id="generalbuild-order">General/Build Order<a class="headerlink" href="#generalbuild-order" title="Permanent link">#</a></h3>
+<p>In order to meet all mutual dependencies the various components have to be compiled in a particular order which is summed up below.</p>
+<h4 id="0-2-packages">0 (2 packages)<a class="headerlink" href="#0-2-packages" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://github.com/lxqt/lxqt-build-tools">lxqt-build-tools</a></li>
+<li><a href="https://github.com/lxqt/libdbusmenu-lxqt">libdbusmenu-lxqt</a></li>
+</ul>
+<h4 id="i-2-packages">I (2 packages)<a class="headerlink" href="#i-2-packages" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://github.com/lxqt/libqtxdg">libqtxdg</a></li>
+<li><a href="https://github.com/lxqt/lxqt-menu-data/">lxqt-menu-data</a></li>
+</ul>
+<h4 id="ii-4-packages">II (4 packages)<a class="headerlink" href="#ii-4-packages" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://github.com/lxqt/liblxqt">liblxqt</a></li>
+<li><a href="https://github.com/lxqt/libsysstat">libsysstat</a></li>
+<li><a href="https://github.com/lxqt/qtxdg-tools">qtxdg-tools</a></li>
+<li><a href="https://github.com/lxqt/libfm-qt">libfm-qt</a></li>
+</ul>
+<h4 id="iii-4-packages">III (4 packages)<a class="headerlink" href="#iii-4-packages" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://github.com/lxqt/lxqt-globalkeys">lxqt-globalkeys</a></li>
+<li><a href="https://github.com/lxqt/lxqt-qtplugin">lxqt-qtplugin</a></li>
+<li><a href="https://github.com/lxqt/lxqt-session">lxqt-session</a></li>
+<li><a href="https://github.com/lxqt/qtermwidget">qtermwidget</a></li>
+</ul>
+<h4 id="iv-all-remaining-packages-in-any-order">IV - All remaining packages in any order<a class="headerlink" href="#iv-all-remaining-packages-in-any-order" title="Permanent link">#</a></h4>
+<ul>
+<li><a href="https://github.com/lxqt/lxqt-panel">lxqt-panel</a></li>
+<li><a href="https://github.com/lxqt/pcmanfm-qt">pcmanfm-qt</a></li>
+<li><a href="https://github.com/lxqt/qterminal">qterminal</a></li>
+<li><a href="https://github.com/lxqt/lxqt-powermanagement">lxqt-powermanagement</a></li>
+<li><a href="https://github.com/lxqt/lxqt-runner">lxqt-runner</a></li>
+<li><a href="https://github.com/lxqt/lxqt-themes">lxqt-themes</a></li>
+<li><a href="https://github.com/lxqt/lxqt-admin">lxqt-admin</a></li>
+<li><a href="https://github.com/lxqt/lxqt-notificationd">lxqt-notificationd</a></li>
+<li><a href="https://github.com/lxqt/lxqt-about">lxqt-about</a></li>
+<li><a href="https://github.com/lxqt/lxqt-config">lxqt-config</a></li>
+<li><a href="https://github.com/lxqt/lxqt-policykit">lxqt-policykit</a></li>
+<li><a href="https://github.com/lxqt/lxqt-sudo">lxqt-sudo</a></li>
+<li><a href="https://github.com/lxqt/lxqt-openssh-askpass">lxqt-openssh-askpass</a></li>
+<li><a href="https://github.com/lxqt/lxqt-wayland-session">lxqt-wayland-session</a></li>
+<li><a href="https://github.com/lxqt/pavucontrol-qt">pavucontrol-qt</a></li>
+<li><a href="https://github.com/lxqt/xdg-desktop-portal-lxqt">xdg-desktop-portal-lxqt</a></li>
+<li><a href="https://github.com/lxqt/lxqt-archiver">lxqt-archiver</a></li>
+<li><a href="https://github.com/lxqt/screengrab">screengrab</a></li>
+<li><a href="https://github.com/lxqt/lximage-qt">lximage-qt</a></li>
+<li><a href="https://github.com/lxqt/qps">qps</a></li>
+<li><a href="https://github.com/lxqt/obconf-qt">obconf-qt</a></li>
+</ul>
+<p>These groups must be processed in this order but the order of components within the each group does not matter.     </p>
+<p>All components are compiled using CMake and GNU make. <br />
+It is strongly advised to do the builds out of source tree. <br />
+At least on some operating systems like Arch Linux and Debian LXQt doesn't seem to start when CMake variable <code>CMAKE_INSTALL_PREFIX</code> which is explained below is <em>not</em> set to <code>/usr</code> which is something we may have to investigate. On the other hand this assignment will hardly ever do harm so it should be safe to recommend setting <code>/usr</code> in general for now.   </p>
+<h3 id="compiling-all-components-individually">Compiling all components individually<a class="headerlink" href="#compiling-all-components-individually" title="Permanent link">#</a></h3>
+<p>The repositories of all components maintained by the LXQt project as well as nearly all others stated above come with a file <code>README.md</code> providing information how to install the respective component. <br />
+This information applies to compiling the archive files of regular releases as well. <br />
+The names of all components in the synopsis <a href="#compiling">above</a> are links to those repositories you may just follow.   </p>
+<p>The general approach is something like
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mkdir<span class="w"> </span>build
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>cmake<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>sources&gt;<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>make
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+Directory <code>build</code> should be outside the directory of the sources. <code>cmake</code> and <code>make</code> can and should be run by regular users, <code>make install</code> requires root privileges in order to write to the FHS. These can be acquired by <code>sudo</code>. This is depicted in section <a href="#scripts-to-build-in-one-step">Scripts to build in one step</a> and mandates an invocation <code>sudo make install</code>. But when all components are compiled on their own its probably more convenient to open an additional root session and invoke <code>make install</code> there.   </p>
+<h3 id="scripts-to-build-in-one-step">Scripts to build in one step<a class="headerlink" href="#scripts-to-build-in-one-step" title="Permanent link">#</a></h3>
+<p>Aside from hosting the main issue tracker repository <a href="https://github.com/lxqt/lxqt">lxqt</a> provides some scripts to compile latest checkouts of the Git <code>master</code> development branch of all components in one step. <br />
+By default this repository does not contain any source code. Rather, source code is pulled by Git submodules, see below.   </p>
+<p>Script <code>build_all_autotools_projects.sh</code> is covering all components where code is configured by the autotools, <code>build_all_cmake_projects.sh</code> those where it is configured by CMake, <code>build_all.sh</code> is just sourcing the other two. <br />
+The only components relying on autotools are libfm and libfm-extra of LXDE which are needed by LXQt, too. But by now its' safe to use the precompiled packages providing theses libraries. This was reflected by stating them as <a href="#miscellaneous">prerequisite</a> and means we'll only have to run <code>build_all_cmake_projects.sh</code>. If you do want to compile libfm and libfm-extra from the sources as well you have to uninstall the binary packages providing them as file conflicts will result otherwise.   </p>
+<p>To install the software after building the scripts will acquire root permissions via <code>sudo</code>. It belongs to the <a href="#miscellaneous">Prerequisites</a> anyway but may need some configuration depending on the defaults of the various systems.</p>
+<p>First we have to prepare a local checkout of repository and source code by running <code>git</code> on the command line. <br />
+We'll start by cloning
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lxqt/lxqt.git
+</span></code></pre></div>
+The repository is using Git submodules to include the actual source code. So next we acquire the sources by running <br />
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">cd</span><span class="w"> </span>lxqt
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git<span class="w"> </span>submodule<span class="w"> </span>init
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--remote<span class="w"> </span>--rebase
+</span></code></pre></div>
+It is strongly recommended to make a backup of directory <code>lxqt</code> prepared that way so as to avoid repeating this procedure should something go wrong.   </p>
+<p>The scripts support several environment variables, see explanation in the scripts' headers. The most important ones are
+* <code>LXQT_PREFIX</code>: Base directory relative to which LXQt is installed. Points to <code>/usr/local</code> by default and should be set to <code>/usr</code>. Technically it is corresponding with CMake variable <code>CMAKE_INSTALL_PREFIX</code>.
+* <code>LIB_SUFFIX</code>: Path relative to <code>LXQT_PREFIX</code> libraries are stored in. Can be used to adjust the path to habits of Linux distributions where different paths like <code>/usr/lib</code>, <code>/usr/lib64</code> or <code>/usr/lib/x86_64-linux-gnu</code> can be found. Technically it is corresponding with CMake variable <code>CMAKE_LIB_SUFFIX</code>. <br />
+Should only be set when the auto-detected default doesn't work as expected.</p>
+<p>So finally we can launch by running
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">LXQT_PREFIX</span><span class="o">=</span>/usr<span class="w"> </span>./build_all_cmake_projects.sh
+</span></code></pre></div></p>
+<h3 id="qt5-support">Qt5 Support<a class="headerlink" href="#qt5-support" title="Permanent link">#</a></h3>
+<p>The script will build only with Qt6. For styling Qt5-based applications and allowing them to use LXQt file dialog, the following packages are needed, usually provided by your package manager:</p>
+<ul>
+<li><a href="https://github.com/lxqt/libqtxdg/releases/tag/3.12.0">libqtxdg 3.12.0</a></li>
+<li><a href="https://github.com/lxqt/libfm-qt/releases/tag/1.4.0">libfm-qt 1.4.0</a></li>
+<li><a href="https://github.com/lxqt/lxqt-qtplugin/releases/tag/1.4.1">lxqt-qtplugin 1.4.1</a></li>
+</ul>
+<p>And if you want to compile them, you will need:
+* <a href="https://github.com/lxqt/lxqt-build-tools/releases/tag/0.13.0">lxqt-build-tools 0.13.0</a></p>
+<p>These four Qt5-based packages can be installed in parallel with their Qt6-based versions, the fourth one being needed only for compiling the others.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "search.suggest", "content.code.copy", "content.action.edit"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
