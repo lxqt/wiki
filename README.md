@@ -16,10 +16,11 @@ See [lxqt-project.org/wiki/editing-wiki](https://lxqt-project.org/wiki/editing-w
 Before merging edit PRs make sure that `update-wikis` is commented out in the workflow,
 otherwise the new page will be overwritten during import. The modified page would have to be copied
 manually in the GH Wiki. Therefor at the moment
-1. Update old wikis
-2. Run both actions hopefully.
+1. Update old .
+2. Re-run both actions.
 
-After editing the GH Wiki both workflows need to be run manually, with `update-wikis` enabled (uncommented).
+After editing the GH Wiki both workflows need to be re-run manually, with `update-wikis` enabled (uncommented).
+**Note**: Only jobs less then 30 days old can be re-run, so the only way to import from the legacy wiki is making a PR and merge it.
 
 ## Files
 
