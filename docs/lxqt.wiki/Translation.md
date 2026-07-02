@@ -27,7 +27,7 @@ All of the `*.desktop.yaml` files are now handled in LXQt Weblate ("Menu Entry")
 * `GenericName`: Tooltip in the menu, explanation in runner
 * `Comment`: is used as tooltip only if  `GenericName=`   and `GenericName[xy]=` are both absent in `/usr/share/applications/foo.desktop`.
 
-It is still possible to edit desktop entry files forking the repository, using an text editor and making a Pull Request but it is not recommended.
+It is still possible to edit desktop entry files by forking the repository, using a text editor, and making a Pull Request, but it is not recommended.
 
 ### Panel Desktop Entry Files
 
