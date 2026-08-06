@@ -182,7 +182,7 @@ In order to meet all mutual dependencies the various components have to be compi
 * [obconf-qt](https://github.com/lxqt/obconf-qt)
 
 
-These groups must be processed in this order but the order of components within the each group does not matter.     
+These groups must be processed in this order but the order of components within each group does not matter.     
 
 All components are compiled using CMake and GNU make.   
 It is strongly advised to do the builds out of source tree.   
