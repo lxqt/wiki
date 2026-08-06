@@ -1,19 +1,19 @@
 ## Introduction
 
-While using precompiled binary packages will be appropriate most of the time compiling from sources may very well make sense, too, e. g. to run latest development versions if these aren't available on a particular operating system. So here's a guide how to achieve this.
+While using precompiled binary packages will be appropriate most of the time, compiling from sources may very well make sense, for example, to run latest development versions if these aren't available on a particular operating system. So here's a guide how to do this.
 
-If running latest development snapshots is your intent please note that these can be compiled in a very convenient way on Arch Linux using its [AUR](https://aur.archlinux.org) and that corresponding repositories exist in Debian and openSUSE as well, see [[Binary packages|Binary-packages]].   
+If running latest development snapshots is your intent, please note that these can be compiled in a very convenient way on Arch Linux using its [AUR](https://aur.archlinux.org), and that corresponding repositories exist in Debian and openSUSE as well, see [[Binary packages|Binary-packages]].   
 
-We'll try to be verbose yet basic knowledge about working on the shell, package management and how to compile using CMake and GNU make is needed.    
+We'll try to be verbose, but basic knowledge about working in the shell, package management, and how to compile using CMake and GNU make is needed.    
 The descriptions stated below should work on any operating system of the *ix ecosystem, that is on all current Linux distributions as well as on BSD. For now distinct packages of Arch Linux, Debian / Ubuntu, Fedora and openSUSE are stated only. Additional distributions may be added.
  
-As for Debian to build the release 1.4.x Debian version 12 ("bookworm") is mandatory while to build version 2.0 and higher Debian 13 is needed.
+As for Debian, to build the 1.4.x release, Debian version 12 "Bookworm" is mandatory, while to build version 2.0 and higher Debian 13 is needed.
 
 ## Prerequisites
 
-Before compiling it is strongly recommended to remove any preexisting LXQt and associated components which were installed other than according to this guide (updating by following the guide once more hasn't been thoroughly tested yet but should work without issues).   
+Before compiling it is strongly recommended to remove any preexisting LXQt packages and associated components which were installed other than according to this guide (updating by following the guide once more hasn't been thoroughly tested yet but should work without issues).   
 
-Next we need to install the dependencies to compile LXQt. These are the build environment as well as the various components needed by the software we are going to compile.   
+Next we need to install the dependencies required to compile LXQt. These include the build environment and the libraries required by LXQt.
 
 ### Build environment
 
@@ -25,7 +25,7 @@ A CMake version ≥ 3.1.8 is required, see documentation of your distribution.
 pacman --needed -S base-devel cmake git pkgconf
 ```
 
-#### Debian, Derivatives
+#### Debian and Derivatives
 
 ```
 apt install build-essential cmake git
@@ -56,7 +56,7 @@ So if you need to compile Qt you may want to look into the various sources addre
 pacman --needed -S qt6-base qt6-svg qt6-tools 
 ```
 
-#### Debian, Derivatives
+#### Debian and Derivatives
 
 ```
 apt install qt6-base-private-dev libqt6svg6-dev qt6-tools-dev qt6-tools-dev-tools libpolkit-qt6-1-dev qt6-wayland-private-dev
@@ -82,7 +82,7 @@ zypper install libqt6-qtbase-private-headers-devel libqt6-qtsvg-devel libqt6-qtt
 pacman --needed -S kguiaddons libkscreen kidletime kwindowsystem solid layer-shell-qt
 ```
 
-#### Debian, Derivatives
+#### Debian and Derivatives
 
 ```
 apt-get install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
@@ -108,7 +108,7 @@ zypper install kguiaddons-devel libkscreen2-devel kidletime-devel kwindowsystem-
 pacman --needed -S bash libstatgrab alsa-lib libpulse lm_sensors libconfig muparser upower polkit-qt6 sudo xorg-xmessage libxss libxcursor libxcomposite libxcb libxkbcommon-x11  libfm menu-cache gtk-update-icon-cache hicolor-icon-theme xdg-utils xdg-user-dirs oxygen-icons openbox libxslt
 ```
 
-#### Debian, Derivatives (Ubuntu see below)
+#### Debian and Derivatives (Ubuntu see below)
 
 ```
 apt install bash gtk-update-icon-cache hicolor-icon-theme libasound2-dev libconfig-dev libdbusmenu-qt5-dev libexif-dev libfm-dev libjson-glib-dev libmenu-cache-dev libmuparser-dev libpolkit-agent-1-dev  libpulse-dev libsensors-dev libstatgrab-dev libudev-dev libupower-glib-dev libx11-xcb-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-image0-dev libxcb-randr0-dev libxcb-screensaver0-dev libxcb-util0-dev libxcomposite-dev libxcursor-dev libxdamage-dev libxi-dev libxkbcommon-x11-dev libxss-dev libxtst-dev openbox-dev oxygen-icon-theme sudo x11-utils xdg-user-dirs xdg-utils xserver-xorg-input-libinput-dev libproc2-dev
@@ -182,7 +182,7 @@ In order to meet all mutual dependencies the various components have to be compi
 * [obconf-qt](https://github.com/lxqt/obconf-qt)
 
 
-These groups must be processed in this order but the order of components within the each group does not matter.     
+These groups must be processed in this order but the order of components within each group does not matter.     
 
 All components are compiled using CMake and GNU make.   
 It is strongly advised to do the builds out of source tree.   

@@ -13,17 +13,17 @@ The stable release is available in community repo, packages' names are the same 
 
 Latest VCS code is provided in the AUR, packages' names are the same as upstream suffixed by `-git`.
 
-## Manjaro, EndeavourOs, CachyOs
+## Manjaro, EndeavourOS, CachyOS
 
 Nearly identical as Arch Linux.
 
-## Debian, Derivatives
+## Debian and Derivatives
 
 ### Debian
 
 LXQt is available in Debian's official repositories (LXQt 1.2.0 in Debian 12 "bookworm" and LXQt 2.1.x in Debian 13 "Trixie"). There are metapackages `lxqt-core` providing core features and `lxqt` providing LXQt as a whole plus some additional applications. See https://github.com/lxqt/lxqt/discussions/2712 for LXQt 2.2 in Debian Trixie. 
 
-### Ubuntu, Derivatives
+### Ubuntu and Derivatives
 
 #### Official repositories
 
