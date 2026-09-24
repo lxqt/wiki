@@ -21,6 +21,7 @@ manually in the GH Wiki. Therefor at the moment
 
 After editing the GH Wiki both workflows need to be re-run manually, with `update-wikis` enabled (uncommented).
 **Note**: Only jobs less then 30 days old can be re-run, so the only way to import from the legacy wiki is making a PR and merge it.
+This needs to be addressed somehow.
 
 ## Files
 
