@@ -1,23 +1,23 @@
 ## Introduction
 
-While using precompiled binary packages will be appropriate most of the time compiling from sources may very well make sense, too, e. g. to run latest development versions if these aren't available on a particular operating system. So here's a guide how to achieve this.
+While precompiled binary packages are appropriate most of the time, compiling from source may also make sense, for example, to run the latest development versions when they aren't available for a particular operating system. Here's a guide on how to do this.
 
-If running latest development snapshots is your intent please note that these can be compiled in a very convenient way on Arch Linux using its [AUR](https://aur.archlinux.org) and that corresponding repositories exist in Debian and openSUSE as well, see [[Binary packages|Binary-packages]].   
+If running the latest development snapshots is your intent, please note that you can compile them conveniently on Arch Linux using its [AUR](https://aur.archlinux.org). Corresponding repositories are also available for Debian and openSUSE; see [[Binary packages|Binary-packages]].   
 
-We'll try to be verbose yet basic knowledge about working on the shell, package management and how to compile using CMake and GNU make is needed.    
-The descriptions stated below should work on any operating system of the *ix ecosystem, that is on all current Linux distributions as well as on BSD. For now distinct packages of Arch Linux, Debian / Ubuntu, Fedora and openSUSE are stated only. Additional distributions may be added.
+We'll try to be thorough, but you will need basic knowledge of the shell, package management, and compiling with CMake and GNU make.    
+The instructions below should work on any operating system in the *nix ecosystem, including current Linux distributions and BSD. For now, instructions are provided only for Arch Linux, Debian/Ubuntu, Fedora, and openSUSE. Additional distributions may be added.
  
-As for Debian to build the release 1.4.x Debian version 12 ("bookworm") is mandatory while to build version 2.0 and higher Debian 13 is needed.
+For Debian, version 12 ("bookworm") is required to build the 1.4.x release, while Debian 13 is required to build version 2.0 and later.
 
 ## Prerequisites
 
-Before compiling it is strongly recommended to remove any preexisting LXQt and associated components which were installed other than according to this guide (updating by following the guide once more hasn't been thoroughly tested yet but should work without issues).   
+Before compiling, we strongly recommend removing any preexisting LXQt components installed by other means. Updating an installation by following this guide again has not been thoroughly tested, but it should work without issues.   
 
-Next we need to install the dependencies to compile LXQt. These are the build environment as well as the various components needed by the software we are going to compile.   
+Next, install the dependencies for compiling LXQt. These include the build environment and the components required by the software we plan to compile.   
 
 ### Build environment
 
-A CMake version ≥ 3.1.8 is required, see documentation of your distribution.   
+A CMake version ≥ 3.1.8 is required; see your distribution's documentation.   
 
 #### Arch Linux
 
@@ -47,8 +47,8 @@ zypper install cmake git
 
 ### Qt
 
-Qt version ≥6.6 is required now. Compiling Qt from its sources isn't exactly a trivial task and not within the scope of this document.   
-So if you need to compile Qt you may want to look into the various sources addressing this topic (and optionally tell us about your experience).   
+A Qt version ≥ 6.6 is now required. Compiling Qt from source is not trivial and is outside the scope of this document.   
+If you need to compile Qt, you may want to consult the resources on this topic and optionally tell us about your experience.   
 
 #### Arch Linux
 
@@ -134,7 +134,7 @@ zypper install bash libstatgrab-devel alsa-devel libpulse-devel libsensors4-deve
 
 ### General/Build Order
 
-In order to meet all mutual dependencies the various components have to be compiled in a particular order which is summed up below.
+To meet all dependencies, compile the components in the order summarized below.
 
 #### 0 (2 packages)
 * [lxqt-build-tools](https://github.com/lxqt/lxqt-build-tools)
@@ -182,17 +182,17 @@ In order to meet all mutual dependencies the various components have to be compi
 * [obconf-qt](https://github.com/lxqt/obconf-qt)
 
 
-These groups must be processed in this order but the order of components within the each group does not matter.     
+Process the groups in this order, but the order of components within each group does not matter.     
 
 All components are compiled using CMake and GNU make.   
-It is strongly advised to do the builds out of source tree.   
-At least on some operating systems like Arch Linux and Debian LXQt doesn't seem to start when CMake variable `CMAKE_INSTALL_PREFIX` which is explained below is *not* set to `/usr` which is something we may have to investigate. On the other hand this assignment will hardly ever do harm so it should be safe to recommend setting `/usr` in general for now.   
+We strongly recommend building outside the source tree.   
+On some operating systems, such as Arch Linux and Debian, LXQt does not seem to start unless the CMake variable `CMAKE_INSTALL_PREFIX` (explained below) is set to `/usr`; this may need further investigation. Setting it to `/usr` is unlikely to cause harm, so it seems safe to recommend for now.   
 
 ### Compiling all components individually
 
-The repositories of all components maintained by the LXQt project as well as nearly all others stated above come with a file `README.md` providing information how to install the respective component.   
-This information applies to compiling the archive files of regular releases as well.   
-The names of all components in the synopsis [above](#compiling) are links to those repositories you may just follow.   
+The repositories for all LXQt components, as well as nearly all other components listed above, include a `README.md` file with information on how to install each component.   
+This information also applies to compiling the source archives of regular releases.   
+The component names in the [list above](#compiling) link to their repositories.   
 
 The general approach is something like
 ```
@@ -202,51 +202,51 @@ cmake <path to sources> -DCMAKE_INSTALL_PREFIX=/usr
 make
 make install
 ```
-Directory `build` should be outside the directory of the sources. `cmake` and `make` can and should be run by regular users, `make install` requires root privileges in order to write to the FHS. These can be acquired by `sudo`. This is depicted in section [Scripts to build in one step](#scripts-to-build-in-one-step) and mandates an invocation `sudo make install`. But when all components are compiled on their own its probably more convenient to open an additional root session and invoke `make install` there.   
+The `build` directory should be outside the source directory. Run `cmake` and `make` as a regular user; `make install` requires root privileges to write to the FHS. You can acquire these with `sudo`. As shown in [Scripts to build in one step](#scripts-to-build-in-one-step), use `sudo make install`. When compiling components individually, it may be more convenient to open an additional root session and run `make install` there.   
 
 ### Scripts to build in one step
 
-Aside from hosting the main issue tracker repository [lxqt](https://github.com/lxqt/lxqt) provides some scripts to compile latest checkouts of the Git `master` development branch of all components in one step.   
-By default this repository does not contain any source code. Rather, source code is pulled by Git submodules, see below.   
+In addition to hosting the main issue tracker, the [lxqt repository](https://github.com/lxqt/lxqt) provides scripts to compile the latest checkouts of all components from the Git `master` development branch in one step.   
+By default, this repository does not contain source code; instead, it fetches the source through Git submodules (see below).   
 
-Script `build_all_autotools_projects.sh` is covering all components where code is configured by the autotools, `build_all_cmake_projects.sh` those where it is configured by CMake, `build_all.sh` is just sourcing the other two.   
-The only components relying on autotools are libfm and libfm-extra of LXDE which are needed by LXQt, too. But by now its' safe to use the precompiled packages providing theses libraries. This was reflected by stating them as [prerequisite](#miscellaneous) and means we'll only have to run `build_all_cmake_projects.sh`. If you do want to compile libfm and libfm-extra from the sources as well you have to uninstall the binary packages providing them as file conflicts will result otherwise.   
+`build_all_autotools_projects.sh` handles components configured with Autotools; `build_all_cmake_projects.sh` handles components configured with CMake; and `build_all.sh` runs the other two.   
+The only components that rely on Autotools are libfm and libfm-extra from LXDE, which are also needed by LXQt. For now, it is safe to use the precompiled packages that provide these libraries. They are listed under [Miscellaneous](#miscellaneous), so we only need to run `build_all_cmake_projects.sh`. If you want to compile libfm and libfm-extra from source as well, uninstall the binary packages that provide them to avoid file conflicts.   
 
-To install the software after building the scripts will acquire root permissions via `sudo`. It belongs to the [Prerequisites](#miscellaneous) anyway but may need some configuration depending on the defaults of the various systems.
+After building, the scripts use `sudo` to acquire root privileges during installation. `sudo` is listed under [Miscellaneous](#miscellaneous), but may need configuration depending on the system's defaults.
     
-First we have to prepare a local checkout of repository and source code by running `git` on the command line.   
+First, prepare a local checkout of the repository and its source code with `git`.   
 We'll start by cloning
 ```
 git clone https://github.com/lxqt/lxqt.git
 ```
-The repository is using Git submodules to include the actual source code. So next we acquire the sources by running   
+The repository uses Git submodules for its source code. Initialize and update them with:   
 ```
 cd lxqt
 git submodule init
 git submodule update --remote --rebase
 ```
-It is strongly recommended to make a backup of directory `lxqt` prepared that way so as to avoid repeating this procedure should something go wrong.   
+We strongly recommend backing up the `lxqt` directory after this step so you do not need to repeat the procedure if something goes wrong.   
 
-The scripts support several environment variables, see explanation in the scripts' headers. The most important ones are
-* `LXQT_PREFIX`: Base directory relative to which LXQt is installed. Points to `/usr/local` by default and should be set to `/usr`. Technically it is corresponding with CMake variable `CMAKE_INSTALL_PREFIX`.
-* `LIB_SUFFIX`: Path relative to `LXQT_PREFIX` libraries are stored in. Can be used to adjust the path to habits of Linux distributions where different paths like `/usr/lib`, `/usr/lib64` or `/usr/lib/x86_64-linux-gnu` can be found. Technically it is corresponding with CMake variable `CMAKE_LIB_SUFFIX`.   
-Should only be set when the auto-detected default doesn't work as expected.
+The scripts support several environment variables; see their explanations in the script headers. The most important ones are:
+* `LXQT_PREFIX`: Base directory relative to which LXQt is installed. It points to `/usr/local` by default and should be set to `/usr`. This corresponds to CMake's `CMAKE_INSTALL_PREFIX` variable.
+* `LIB_SUFFIX`: Path relative to `LXQT_PREFIX` where libraries are stored. Use it to adjust for Linux distributions with paths such as `/usr/lib`, `/usr/lib64`, or `/usr/lib/x86_64-linux-gnu`. This corresponds to CMake's `CMAKE_LIB_SUFFIX` variable.   
+Set it only when the auto-detected default does not work as expected.
 
-So finally we can launch by running
+Finally, launch the build with:
 ```
 LXQT_PREFIX=/usr ./build_all_cmake_projects.sh
 ```
 
 ### Qt5 Support
 
-The script will build only with Qt6. For styling Qt5-based applications and allowing them to use LXQt file dialog, the following packages are needed, usually provided by your package manager:
+The script builds only with Qt 6. To style Qt 5-based applications and let them use the LXQt file dialog, install the following packages, usually through your package manager:
 
 * [libqtxdg 3.12.0](https://github.com/lxqt/libqtxdg/releases/tag/3.12.0)
 * [libfm-qt 1.4.0](https://github.com/lxqt/libfm-qt/releases/tag/1.4.0)
 * [lxqt-qtplugin 1.4.1](https://github.com/lxqt/lxqt-qtplugin/releases/tag/1.4.1)
 
 
-And if you want to compile them, you will need:
+To compile them, you will also need:
 * [lxqt-build-tools 0.13.0](https://github.com/lxqt/lxqt-build-tools/releases/tag/0.13.0)
 
-These four Qt5-based packages can be installed in parallel with their Qt6-based versions, the fourth one being needed only for compiling the others.
+These four Qt 5-based packages can be installed alongside their Qt 6-based versions; `lxqt-build-tools` is needed only to compile the other three.
