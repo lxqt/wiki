@@ -89,6 +89,44 @@ With all compositors that support `wlr-output-management protocol`, [kanshi](htt
 
 Please check your compositor configuration if some of them aren't working. Sway, for example, uses `pactl` (part of libpulse) for volume, while labwc and Wayfire use `pamixer` by default, which may not be present in your installation.
 
+## Screensharing
+
+On all compositors except kwin_wayland xdg-desktop-portal-wlr will work, make sure slurp is installed too.
+
+
+### kwin_wayland
+
+Three files are needed in order to use the advanced KDE Plasma portal which allows sharing windows, screens and more:
+
+`~/.config/xdg-desktop-portal/portals.conf`:
+
+```xml
+[preferred]
+default=kde
+org.freedesktop.impl.portal.FileChooser=lxqt
+```
+
+`~/.local/bin/lxqt-kde-portal_wrapper.sh`:
+```xml
+#!/bin/sh
+export XDG_CURRENT_DESKTOP=KDE
+
+# Execute the KDE desktop portal
+[ -x /usr/libexec/xdg-desktop-portal-kde ] && exec /usr/libexec/xdg-desktop-portal-kde 
+[ -x /usr/lib/x86_64-linux-gnu/libexec/xdg-desktop-portal-kde ] && exec /usr/lib/x86_64-linux-gnu/libexec/xdg-desktop-portal-kde
+exec /usr/lib/xdg-desktop-portal-kde
+```
+The above file has to be executable: chmod +x ~/.local/bin/lxqt-kde-portal_wrapper.sh
+
+`~/.local/share/dbus-1/services/org.freedesktop.impl.portal.desktop.kde.service`:
+```xml
+[D-BUS Service]
+Name=org.freedesktop.impl.portal.desktop.kde
+Exec=/bin/sh -c 'exec ${HOME}/.local/bin/lxqt-kde-portal_wrapper.sh'
+```
+
+Reboot is needed usually to make it work. Please note that you need to change or remove portals.conf to make screensharing work on other compositors.
+
 ## Third party tools (mostly for wlroots, not kwin_wayland)
 
 * `swayidle` Screen blanking/monitor off in combination with `wlopm`
@@ -259,6 +297,3 @@ SDDM uses `/var/lib/sddm/` as home directory where the compositor should be conf
     </device>
   </libinput>
 </labwc_config>
-
-
-
