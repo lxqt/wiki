@@ -27,7 +27,7 @@ All of the `*.desktop.yaml` files are now handled in LXQt Weblate ("Menu Entry")
 * `GenericName`: Tooltip in the menu, explanation in runner
 * `Comment`: is used as tooltip only if  `GenericName=`   and `GenericName[xy]=` are both absent in `/usr/share/applications/foo.desktop`.
 
-It is still possible to edit desktop entry files by forking the repository, using a text editor, and making a Pull Request, but it is not recommended.
+It is still possible to edit desktop entry files by forking the repository, using a text editor and making a Pull Request, but it is not recommended.
 
 ### Panel Desktop Entry Files
 
@@ -101,7 +101,10 @@ Here are steps about fixing failures via SSH:
     For example, on https://translate.lxqt-project.org/projects/lxqt-configuration/lxqt-admin-user-menu-entry/#repository, it is shown that the git path is `lxqt-configuration/lxqt-admin-user`.
     Note that for [linked components](https://docs.weblate.org/en/latest/vcs.html#weblate-internal-urls), the git path can be different from the URL.
 3. Resolve rebase failures (**needs more explanation**)
-4. Hit the _Rebase_ button on the _Repository Maintenance_ page, and the Weblate component (as long as linked ones) will be unlocked.
+4.  _Only_ if all content/translations are committed and merged in upstream:
+5. `git log` and look for the safe state/commit.
+6. `git reset --hard <hash>`
+7. Hit the _PULL_ button on the _Repository Maintenance_ page, and the Weblate component (as long as linked ones) will be unlocked.
 
 ### Refresh the GitHub token for Weblate
 

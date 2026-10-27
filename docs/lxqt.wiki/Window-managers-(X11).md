@@ -1,7 +1,7 @@
 LXQt does not provide its own window manager but any arbitrary window manager can be used, most notably Openbox, KWin (the window manager of KDE), and Xfwm4 (the window manager of Xfce).   
 
 The current window manager is stored in section `[General]` of file `session.conf`.
-```
+```ini
 [General]
 [...]
 window_manager=xfwm4
@@ -23,10 +23,9 @@ Window manager related shortcuts (raise/lower, maximize/minimize, desktop and wi
 
 #### Compositor
 
-For desktop effects, shadows, transparency and else a compositor has to be enabled. Kwin and Xfwm4 provide their own compositor, for openbox or other Window Managers 'picom' can be used.
+For desktop effects, shadows, transparency and else a compositor has to be enabled. Kwin and Xfwm4 provide their own compositor, for openbox or other Window Managers `picom` can be used.
 
 A configuration tool for picom is: [picom.conf](https://github.com/redtide/picom-conf/).
-
 
 ### Openbox
 
@@ -47,8 +46,8 @@ An essential custom menu entry for kwin can be installed from [here](https://git
 #### Shortcuts
 KDE stores keyboard shortcuts in the `~/.config/kglobalshortcutsrc` configuration file. The GUI can be installed separately, but requires the complete `plasma-desktop` package.
 
-!!! note
-     Kwin version 6.*  does not start `kglobalacceld` automatically anymore, adding  `/usr/lib/kglobalacceld` in LXQt `Session Settings > Autostart` is needed.
+> [!NOTE]
+> Kwin version 6.*  does not start `kglobalacceld` automatically anymore, adding  `/usr/lib/kglobalacceld` in LXQt `Session Settings > Autostart` is needed.
 
 #### Issues
 
@@ -60,14 +59,12 @@ KWin does not distinguish PcManFm-Qt windows from the desktop which is drawn by 
 * In _KDE Systemsettings > Window Managment > KWin Scripts_ "MinimizeAll" is activated
 * In _KDE Systemsettings > Shortcuts_ searching for "MinimizeAll" a shortcut is set
 
+In `~/.config/kglobalshortcutsrc`:
 
-`~/.config/kglobalshortcutsrc`
-
-```
+```ini
 ...
 MinimizeAll=Alt+D,none,MinimizeAll
 ...
-
 ```
 With `xdotool` a "Show Desktop" button on the panel can be created by adding the "Custom Command" plugin, set `xdotool key "alt+d"` (if shortcut is Alt D) as left click command, icon `desktop.svg` and unset all other settings.
 
@@ -82,20 +79,20 @@ Three tools are provided to configure this window manager.
 * Window Manager Tweaks: Additional / advanced settings. Binary `xfwm4-tweaks-settings`, desktop entry file `xfce-wmtweaks-settings.desktop`.
 * Workspaces: Configures the virtual desktops. Binary `xfwm4-workspace-settings`, desktop entry file `xfce-workspaces-settings.desktop`.
 
-!!! note
-    All desktop entry files mentioned above have by default key `OnlyShowIn=XFCE;` and will thus not be visible in LXQt sessions including the panel's main menu. In order to use these desktop entry files in LXQt sessions remove this line either in the system copy of the files, normally in `/usr/share/applications/`, or in a user specific copy which has to be placed in `~/.local/share/applications/` most of the time. The latter is the preferred solution as it won't be overwritten by updates:
+> [!NOTE]
+> All desktop entry files mentioned above have by default key `OnlyShowIn=XFCE;` and will thus not be visible in LXQt sessions including the panel's main menu. In order to use these desktop entry files in LXQt sessions remove this line either in the system copy of the files, normally in `/usr/share/applications/`, or in a user specific copy which has to be placed in `~/.local/share/applications/` most of the time. The latter is the preferred solution as it won't be overwritten by updates:
  ```
  mkdir ~/.local/share/applications
  cp /usr/share/applications/xfce-w* ~/.local/share/applications
 
-Those files ready for use can be installed from [here](https://github.com/lxqt/lxqt-WM-integration-files#xfwm4).
+> [!NOTE] 
+> Those files ready for use can be installed from [here](https://github.com/lxqt/lxqt-WM-integration-files#xfwm4).
 ```
 #### Shortcuts
 
 Shortcuts can be modified in _Preferences > Window Manager >  Keyboard_ , binary `xfwm4-settings`.
 
 ### Other Window Manager
-
 
 A comprehensive list can be found in the [Arch Wiki](https://wiki.archlinux.org/title/Window_manager#List_of_window_managers).
 

@@ -2,7 +2,7 @@
 
 While using precompiled binary packages will be appropriate most of the time compiling from sources may very well make sense, too, e. g. to run latest development versions if these aren't available on a particular operating system. So here's a guide how to achieve this.
 
-If running latest development snapshots is your intent please note that these can be compiled in a very convenient way on Arch Linux using its [AUR](https://aur.archlinux.org) and that corresponding repositories exist in Debian and openSUSE as well, see [[Binary packages|Binary-packages]].   
+If running latest development snapshots is your intent please note that these can be compiled in a very convenient way on Arch Linux using its [AUR](https://aur.archlinux.org).
 
 We'll try to be verbose yet basic knowledge about working on the shell, package management and how to compile using CMake and GNU make is needed.    
 The descriptions stated below should work on any operating system of the *ix ecosystem, that is on all current Linux distributions as well as on BSD. For now distinct packages of Arch Linux, Debian / Ubuntu, Fedora and openSUSE are stated only. Additional distributions may be added.
@@ -85,7 +85,7 @@ pacman --needed -S kguiaddons libkscreen kidletime kwindowsystem solid layer-she
 #### Debian, Derivatives
 
 ```
-apt-get install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
+apt install libkf6guiaddons-dev libkf6idletime-dev libkscreen-dev libkf6windowsystem-dev libkf6solid-dev liblayershellqtinterface-dev
 ```
 
 #### Fedora
@@ -105,7 +105,7 @@ zypper install kguiaddons-devel libkscreen2-devel kidletime-devel kwindowsystem-
 #### Arch Linux
 
 ```
-pacman --needed -S bash libstatgrab alsa-lib libpulse lm_sensors libconfig muparser upower polkit-qt6 sudo xorg-xmessage libxss libxcursor libxcomposite libxcb libxkbcommon-x11  libfm menu-cache gtk-update-icon-cache hicolor-icon-theme xdg-utils xdg-user-dirs oxygen-icons openbox libxslt
+pacman --needed -S bash libstatgrab alsa-lib libpulse lm_sensors libconfig muparser upower polkit-qt6 sudo xorg-xmessage libxss libxcursor libxcomposite libxcb libxkbcommon-x11 menu-cache gtk-update-icon-cache hicolor-icon-theme xdg-utils xdg-user-dirs oxygen-icons openbox libxslt
 ```
 
 #### Debian, Derivatives (Ubuntu see below)
@@ -195,7 +195,7 @@ This information applies to compiling the archive files of regular releases as w
 The names of all components in the synopsis [above](#compiling) are links to those repositories you may just follow.   
 
 The general approach is something like
-```
+```bash
 mkdir build
 cd build
 cmake <path to sources> -DCMAKE_INSTALL_PREFIX=/usr
@@ -204,28 +204,25 @@ make install
 ```
 Directory `build` should be outside the directory of the sources. `cmake` and `make` can and should be run by regular users, `make install` requires root privileges in order to write to the FHS. These can be acquired by `sudo`. This is depicted in section [Scripts to build in one step](#scripts-to-build-in-one-step) and mandates an invocation `sudo make install`. But when all components are compiled on their own its probably more convenient to open an additional root session and invoke `make install` there.   
 
-### Scripts to build in one step
+### Script to build in one step
 
-Aside from hosting the main issue tracker repository [lxqt](https://github.com/lxqt/lxqt) provides some scripts to compile latest checkouts of the Git `master` development branch of all components in one step.   
+Aside from hosting the main issue tracker repository [lxqt](https://github.com/lxqt/lxqt) provides a script to compile latest checkouts of the Git `master` development branch of all components in one step.   
 By default this repository does not contain any source code. Rather, source code is pulled by Git submodules, see below.   
 
-Script `build_all_autotools_projects.sh` is covering all components where code is configured by the autotools, `build_all_cmake_projects.sh` those where it is configured by CMake, `build_all.sh` is just sourcing the other two.   
-The only components relying on autotools are libfm and libfm-extra of LXDE which are needed by LXQt, too. But by now its' safe to use the precompiled packages providing theses libraries. This was reflected by stating them as [prerequisite](#miscellaneous) and means we'll only have to run `build_all_cmake_projects.sh`. If you do want to compile libfm and libfm-extra from the sources as well you have to uninstall the binary packages providing them as file conflicts will result otherwise.   
-
-To install the software after building the scripts will acquire root permissions via `sudo`. It belongs to the [Prerequisites](#miscellaneous) anyway but may need some configuration depending on the defaults of the various systems.
+Script `build_all_cmake_projects.sh` will build all, to install the software after building the script will acquire root permissions via `sudo`. It belongs to the [Prerequisites](#miscellaneous) anyway but may need some configuration depending on the defaults of the various systems.
     
 First we have to prepare a local checkout of repository and source code by running `git` on the command line.   
 We'll start by cloning
-```
+```bash
 git clone https://github.com/lxqt/lxqt.git
 ```
 The repository is using Git submodules to include the actual source code. So next we acquire the sources by running   
-```
+```bash
 cd lxqt
 git submodule init
 git submodule update --remote --rebase
 ```
-It is strongly recommended to make a backup of directory `lxqt` prepared that way so as to avoid repeating this procedure should something go wrong.   
+It is recommended to make a backup of directory `lxqt` prepared that way so as to avoid repeating this procedure should something go wrong.   
 
 The scripts support several environment variables, see explanation in the scripts' headers. The most important ones are
 * `LXQT_PREFIX`: Base directory relative to which LXQt is installed. Points to `/usr/local` by default and should be set to `/usr`. Technically it is corresponding with CMake variable `CMAKE_INSTALL_PREFIX`.
@@ -233,7 +230,7 @@ The scripts support several environment variables, see explanation in the script
 Should only be set when the auto-detected default doesn't work as expected.
 
 So finally we can launch by running
-```
+```bash
 LXQT_PREFIX=/usr ./build_all_cmake_projects.sh
 ```
 

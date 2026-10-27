@@ -1,8 +1,6 @@
-
-## General
-
 This document is about advanced and, in some cases, hidden properties or functionalities of PCManFM-Qt.
 
+- [Custom Actions](#custom-actions)
 
 ### GVFS
 
@@ -82,7 +80,17 @@ Let us call this a "transient filter bar". For the sake of consistency, if the f
 For pasting text into the transient filter bar, press `Shift + Insert` inside the view. Of course, you could also show and focus the filter bar with `Ctrl + I` but `Shift + Insert` guarantees that the focus remains on the view.
 
 !!! note
-     Pressing and holding `Backspace` is not a good way of clearing the transient filter bar because the selected file may change. Pressing `Escape` is always the best and easiest way.
+     Pressing and holding `Backspace` is not a good way of clearing the transient filter bar  because the selected file may change. Pressing `Escape` is always the best and easiest way.
+
+### Keyboard Navigation
+
+When a folder is opened, by default the first item is *focused* but not selected. The focused item is also called the *current item*, as mentioned in the previous section. In Qt, the current item is selected by (`Ctrl` +) `Space` and deselected by `Ctrl + Space`. This Qt behavior is inherited by PCManFM-Qt. Some users — especially those who come from the GTK world — may expect that the current item should be selected by an arrow key. That is not the case in Qt: arrow keys are directional by definition and so, they select the items around the current item.
+
+For changing the current item without selecting it, `Ctrl` plus an arrow key can be used. Then the new current item can be selected by `Ctrl + Space`. In this way, non-consecutive items can be selected by using keyboard.
+
+The `Escape` key changes the focus to the main view from anywhere, and `Ctrl + Escape` focuses the side-pane. To focus the path entry (aka. location bar), use `Ctrl + L`. Also, see `Help → Hidden Shortcuts` for more shortcuts.
+
+When the view is focused and the split view is activated (`F6`), the `Tab` key switches between the split views.
 
 ### Bulk Renaming
 
@@ -130,12 +138,12 @@ Certain File
 
 Then, the folders `Public` and `Templates` as well as the file `Certain File` inside your home directory are treated as hidden by PCManFM-Qt and some other file managers.
 
-!!! note
-     Editing `.hidden` does not have an immediate effect because `GLib` (which does the file management in PCManFM-Qt) uses cache. It will take effect the next time its containing folder is opened. You could also wait a few seconds and reload the folder.
+> [!NOTE]
+> Editing `.hidden` does not have an immediate effect because `GLib` (which does the file management in PCManFM-Qt) uses cache. It will take effect the next time its containing folder is opened. You could also wait a few seconds and reload the folder.
 
 ### Thumbnails
 
-PCManFM-Qt (actually, `libfm-qt`) creates thumbnails of images internally — installation of `qt-imageformats` and [`kimageformats`](https://api.kde.org/frameworks/kimageformats/html/index.html) can extend the range of its supported formats considerably — but it can also use external thumbnailers for other formats or kinds of files.
+PCManFM-Qt (actually, `libfm-qt`) creates thumbnails of images internally — installation of `qt-imageformats` and [`kimageformats`](https://invent.kde.org/frameworks/kimageformats) can extend the range of its supported formats considerably — but it can also use external thumbnailers for other formats or kinds of files.
 
 User-defined thumbnailers can be created inside the directory `~/.local/share/thumbnailers`. For each new thumbnailer to be seen, PCManFM-Qt needs to be restarted from *LXQt Session Settings* → *Desktop*.
 
@@ -203,7 +211,7 @@ pcmanfm-qt --desktop --profile=myProfile
 
 Users usually do not need to set it. It is set to `lxqt` when the desktop module is started by the LXQt Session and is `default` when omitted.
 
-When PCManFM-Qt is started with a profile `xyz`, it (creates and) uses the configuration files inside the folder `~/pcmanfm-qt/xyz/`. In this way, the application can be started with different configurations under different desktop environments. Please note that only the LXQt Session sets it automatically. If you need a specific profile for another DE, you should set it explicitly, e.g., in front of `Exec=` in a desktop entry that you may make for that DE.
+When PCManFM-Qt is started with a profile `xyz`, it (creates and) uses the configuration files inside the folder `~/.config/pcmanfm-qt/xyz/`. In this way, the application can be started with different configurations under different desktop environments. Please note that only the LXQt Session sets it automatically. If you need a specific profile for another DE, you should set it explicitly, e.g., in front of `Exec=` in a desktop entry that you may make for that DE.
 
 ### Using Desktop under Wayland
 

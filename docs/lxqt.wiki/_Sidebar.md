@@ -8,10 +8,11 @@
 [[Third party apps|Third-party-apps]]   
 
 # Configuration
-[[General|General]]   
+[[General|General]]    
 [[Launching LXQt sessions|Launching-LXQt-sessions]]   
-[[Window Managers (X11)|Window-managers-(X11)]]   
-[[Wayland Session|Wayland-Session]]  
+[[Window Managers (X11)|Window-managers-(X11)]]       
+[[Wayland Session|Wayland-Session]]    
+[[LXQt Panel|LXQt Panel]]            
 [[Screensavers/Lockers|Screensaver-and-Screen-Locker]]  
 [[Setting Locale|SettingLocale]]   
 [[Miscellaneous|Miscellaneous]]   
