@@ -1,7 +1,7 @@
 ## LXQt Wayland Session
 
 > [!NOTE]  
-> This page is deprecated and may be outdated, please consult the [actual page](https://github.com/lxqt/lxqt/wiki/Wayland-Session).
+> This page is deprecated and may be outdated, please consult the new Wiki at [lxqt-project.org/wiki/Wayland-Session](https://lxqt-project.org/wiki/Wayland-Session).
 
 ## General
 

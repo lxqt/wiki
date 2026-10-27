@@ -1,7 +1,7 @@
 ![LXQt](https://github.com/user-attachments/assets/d91fb43d-7ddb-4314-8298-0bc24fcb8c2a)
 # Welcome to the LXQt wiki
 
-This is the wiki of [the LXQt project](https://lxqt-project.org), which is the fusion of the LXDE-Qt and [Razor-qt](https://github.com/Razor-qt/razor-qt) projects.
+This is the wiki of [the LXQt project](https://lxqt-project.org), which is the fusion of the LXDE-Qt and [Razor-qt](https://github.com/Razor-qt/razor-qt) projects. Check out the improved Wiki website at https://lxqt-project.org/wiki/ !
 
 ## Introduction
 LXQt is a free and open source lightweight [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment).

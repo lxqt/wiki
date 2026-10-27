@@ -7,7 +7,7 @@ Let's get you started.
 Due to its modular approach, you do not have to have every bit of LXQt compiled and installed by hand in order to work on it. As long as you have up-to-date git-version of [lxqt-build-tools](https://github.com/lxqt/lxqt-build-tools), [libqtxdg](https://github.com/lxqt/libqtxdg), [liblxqt](https://github.com/lxqt/liblxqt) and [lxqt-qtplugin](https://github.com/lxqt/lxqt-qtplugin) you can likely use a prepackaged version of LXQt as your day-to-day Desktop Environment. The [Arch Linux AUR](https://aur.archlinux.org/packages/lxqt-desktop-git/) makes this very easy and is the preferred way for LXQt developers.
 
 [KDevelop](https://www.kdevelop.org/) is an excellent Qt-based IDE for C++ and due to it being a KDE project, integrates really well with Qt projects.
-However, you will find that you do not necessarily need a full-blown IDE to contribute. Several developers work on LXQt off their favourite text editor - FeatherPad, JuffEd, Kate, or even Vim.
+However, you will find that you do not necessarily need a full-blown IDE to contribute. Several developers work on LXQt off their favourite text editor - FeatherPad, Kate, or even Vim.
 
 Say for example you want to contribute to [lxqt-runner](https://github.com/lxqt/lxqt-runner). It is as simple as cloning the repository, then running:
 
@@ -17,13 +17,31 @@ Say for example you want to contribute to [lxqt-runner](https://github.com/lxqt/
 
 You can then run your self-compiled runner with `./lxqt-runner`. No installation necessary.
 
+### Usage of LLMs
+
+First of all, LXQt is made and developed by human beings and has a general spirit or philosophy which can be understood by human beings.
+
+LXQt does not ban AI but limits its usage. The following guideline has gray areas, which means that it is made by and for human beings.
+
+Issue reports and feature requests should *not* be made by AI.
+
+When making a PR by using AI, you should
+
+ * Write the PR comment yourself. Do not copy-paste what LLM gives you. LLM-written texts are usually long-winded and waste the reviewer's time.
+ * Tell explicitly where and how you have used AI. Particularly, if codes are taken from other programs, the sources should be mentioned.
+ * Fully understand every line of the PR's code.
+ * Prove that you see relations. Is the PR compatible with other parts of the program? With the whole code structure? With LXQt's philosophy? … Saying that it works is far from enough.
+
+In the end, only LXQt developers or contributors review PRs. Rejecting or merging is decided and done by LXQt developers.
+
 ## Getting your changes merged
 
 We use [git](http://git-scm.com/). Our repositories are on [GitHub](https://github.com/lxqt). A basic understanding of git is required in order to contribute - there's plenty of tutorials on the web, look around!
 
-Still with our earlier lxqt-runner example, let's say you want to implement a new feature.
+Still with our earlier lxqt-runner example, let's say you want to fix an issue or implement a new feature.
 
-Your first step should be to see if there is an [existing issue](https://github.com/lxqt/lxqt/issues) for it. If there is, make sure to leave a note that you want to work on it.
+Your first step should be to see if there is an existing issue or feature request for it at https://github.com/lxqt/lxqt/issues or at the repository of the program. If there is an open issue, make sure to leave a note that you want to work on it. If there is a feature request that is not decided yet, participate in the discussion. Finally, if there is no report, open one to start discussing it: Is the issue reproducible? Is the feature needed? And so on. 
+
 Once you have written the code for it, you will have to [fork the repository](https://help.github.com/articles/fork-a-repo/), commit your changes and push them to your fork.
 Your next step will then be to [file a pull request](https://help.github.com/articles/using-pull-requests/) ("PR") with the LXQt repository ("upstream").
 There, your changes will be reviewed by a developer and you may be asked to change or fix a few things. You do so by continuing to commit (or modifying existing commits) on your fork, and then running `git push` as you normally would - the pull request will be automatically updated. (Note that if you modified existing commits in your PR, you will have to run `git push --force`.)
@@ -31,6 +49,7 @@ There, your changes will be reviewed by a developer and you may be asked to chan
 Eventually, the developer will recognize your PR as "Good To Merge" ("GTM"). Depending on the size of the changes, it will then be merged straight away or it will require the input of more developers.
 
 If you regularly contribute good code and are interested in joining the developer team, you will eventually get commit access. Keep at it!
+
 
 ### New committer
 Once you got commit access don't run loose.

@@ -15,3 +15,9 @@ All components and applications have their **own** issue tracker on GitHub, for 
 * [QTerminal](https://github.com/lxqt/qterminal/issues)
 ## Website 
 * [lxqt-project.org](https://github.com/lxqt/lxqt.github.io/issues)
+
+Please use the template, and where none is show include relevant information:
+* LXQt Version
+* Distribution
+* Window manager or Wayland compositor
+* Steps to reproduce

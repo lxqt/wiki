@@ -20,8 +20,8 @@ Testing on labwc, wayfire, sway, hyprland, kwin_wayland, niri
 
  Component | To fix | Issue/WIP/PR     | Notes 
 -----------|--------|-----------|-----------
-lxqt-panel      |  Plugins not working:  kbindicator (is prevented from adding), colorpicker,mainmenu (on bottom panel)  | https://github.com/lxqt/lxqt-panel/pull/2043| Plugins working: sysstat, cpu monitor, network monitor, Notification Area, worldclock, fancy menu, quicklaunch, mount, spacer, custom command, backlight, volume, showdesktop. 
-lxqt-powermanagement| Button settings | - | Info is shown now
+lxqt-panel      |  Plugins not working:  kbindicator (is prevented from adding), colorpicker | https://github.com/lxqt/lxqt-panel/pull/2043| Plugins working: sysstat, cpu monitor, network monitor, Notification Area, worldclock, fancy menu, quicklaunch, mount, spacer, custom command, backlight, volume, showdesktop. 
+lxqt-powermanagement| Power key settings | - | Info is shown now
 
 
 

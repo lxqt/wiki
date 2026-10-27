@@ -1,10 +1,12 @@
 ## LXQt themes
 LXQt themes are [qss stylesheets](http://doc.qt.io/qt-4.8/stylesheet.html). They are either located in `/usr/share/lxqt/themes/` or `~/.local/share/lxqt/themes`. So far the following themes are available:
+
 * Ambiance
 * Arch Colors
 * Clearlooks
 * Dark
 * Frost
+* Graphite
 * KDE-Plasma
 * Kvantum
 * Leech
@@ -14,16 +16,14 @@ LXQt themes are [qss stylesheets](http://doc.qt.io/qt-4.8/stylesheet.html). They
 * Valendas
 
 
-Some discussions about themes can be followed [here](https://github.com/lxde/lxqt/issues/572). 
+Some discussions about themes can be followed [here](https://github.com/lxqt/lxqt/issues/572). 
 Please note that using "System" theme with Qt widget styles Breeze, Oxygen or Qtcurve results in uncut text in task manager buttons.
 
 For transparency in some themes a compositor is needed. Only Breeze, Oxygen and Kvantum widget styles support transparency in all panel menus.
 
-
-
 If anybody is interested in how the environment would look without a custom theme, create the following files (if \<prefix\> is /usr):
 
-```
+```bash
     mkdir /usr/share/lxqt/themes/notheme
     touch /usr/share/lxqt/themes/notheme/lxqt-panel.qss
 ```
@@ -32,6 +32,7 @@ Then choose the Notheme in `lxqt-config-appearance`.
 
 ## Qt 
 Theming Qt is achieved by Qt widget themes. So far the following are available:
+
 * Breeze
 * Oxygen
 * QtCurve
@@ -42,7 +43,7 @@ Theming Qt is achieved by Qt widget themes. So far the following are available:
 
 You can install Qt widget themes using your package manager. `Oxygen` widget theme can cause DND issues from mainmenu to the desktop or the "quicklaunch" panel widget, see [lxqt-panel/issues/1750](https://github.com/lxqt/lxqt-panel/issues/1750).
 
-#### Kvantum
+## Kvantum
 
 If `Kvantum` as Qt Style is selected to achieve an unique overall look the `System` theme can be selected.
 
@@ -50,10 +51,10 @@ Kvantum appearance can be configured in `Kvantum Manager`.
 
 ## Theming the environment 
 
-* Qt Palette colors can be modified in lxqt-config-appearence > Widget Style > Qt Palette. In themes like Frost, Dark and Light palette colors are used at some extent. In LXQt 1.0.0 and later customized palettes can be saved and loaded; they are saved in `~/.local/share/lxqt/palettes/` .
-* Window decoration, titlebar and window buttons can be configured in the settings of the [window manager](https://github.com/lxqt/lxqt/wiki/ConfigWindowManagers) used.
+* Qt Palette colors can be modified in Appearance > Widget Style > Qt Palette. In themes like Frost, Dark and Light palette colors are used at some extent. In LXQt 1.0.0 and later customized palettes can be saved and loaded; they are saved in `~/.local/share/lxqt/palettes/`.
+* Window decoration, titlebar and window buttons can be configured in the settings of the X11 Window Manager or Wayland compositor used.
 
-For theming Qt5 applications some extra packages are needed, see https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support
+For theming Qt5 applications some extra packages are needed, see https://github.com/lxqt/lxqt/wiki/Building-from-source#qt5-support or [lxqt-project.org/wiki/Building-from-source#qt5-support](https://lxqt-project.org/wiki/Building-from-source.html#qt5-support)
 
 
 For some infos about how to create a nice looking environment take a look at this [Manjaro Wiki entry](https://wiki.manjaro.org/index.php/LXQt#Theming).
@@ -70,7 +71,7 @@ Icon sets can be installed using the package manager of the distribution. Suitab
 * Faenza, Faenza Dark
 * Tangerine
 * Tango
-
+* Tela
 
 ## Symbolic icons
 
