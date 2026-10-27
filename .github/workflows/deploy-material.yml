@@ -27,5 +27,5 @@ jobs:
       - run: pip install mkdocs-material
       - run: pip install mkdocs-exclude
       - run: pip install pymdown-extensions
-      - run: ./update-wikis
+#      - run: ./update-wikis
       - run: cd docs/ && mkdocs gh-deploy --force
